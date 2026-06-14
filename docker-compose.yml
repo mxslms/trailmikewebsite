@@ -9,3 +9,9 @@ services:
       - "8085:80"
     volumes:
       - ./index.html:/usr/share/nginx/html/index.html:ro
+
+  tunnel:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflare-tunnel
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run --eyJhIjoiNDk2MzRhMDY0MDkyMmI1Yjg2MTVmMDZiZTM0MTM3OWEiLCJ0IjoiYzc1ZWMxYTQtMDE3Yi00MjBmLWIyYjUtOTJmNjUyY2MwYzI5IiwicyI6Ik0yUm1Oemc1TldNdE1qY3dNeTAwWkdFMkxXSXpaVEV0TURFNFpUVmpOV1kxWkRRMCJ9
