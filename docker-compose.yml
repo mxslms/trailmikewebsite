@@ -9,9 +9,15 @@ services:
       - "8085:80"
     volumes:
       - ./index.html:/usr/share/nginx/html/index.html:ro
-
+    networks:
+      - web-network
   tunnel:
     image: cloudflare/cloudflared:latest
     container_name: cloudflare-tunnel
     restart: unless-stopped
     command: tunnel --no-autoupdate run --token REDACTED_CLOUDFLARE_TUNNEL_TOKEN
+    networks:
+      - web-network
+networks:
+  web-network:
+    external: true
