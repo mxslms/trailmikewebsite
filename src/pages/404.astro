@@ -1,0 +1,36 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+---
+
+<PageLayout title="Not found" description="That trail marker doesn’t exist.">
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">404</p>
+      <h1>Wrong turn</h1>
+      <p>That page isn’t on the map. Head back to trail or the journal.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="/">Home</a>
+        <a class="btn btn-ghost" href="/posts">Journal</a>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  h1 {
+    margin: 0.35rem 0 0.85rem;
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+  }
+
+  p {
+    color: var(--ink-soft);
+    max-width: 30rem;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+</style>

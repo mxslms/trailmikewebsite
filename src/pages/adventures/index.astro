@@ -1,0 +1,65 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import TripCard from '../../components/TripCard.astro';
+import { trips } from '../../data/trips';
+
+const sorted = [...trips].sort((a, b) => b.year - a.year);
+---
+
+<PageLayout
+  title="Adventures"
+  description="Backpacking trip journals — Iceland, Glacier National Park, Utah parks, Tetons, Yellowstone, Olympic, and more."
+>
+  <section class="section page-intro">
+    <div class="wrap">
+      <p class="eyebrow fade-up">Adventures</p>
+      <h1 class="fade-up-delay">Trail notes from the places that stuck</h1>
+      <p class="lede fade-up-delay-2">
+        Multi-day backpacking trips, written up one by one. Photos and route details land as each
+        journal entry ships — starting with Iceland 2025.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap trip-grid">
+      {sorted.map((trip) => <TripCard trip={trip} />)}
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .page-intro {
+    padding-bottom: 0;
+  }
+
+  h1 {
+    margin: 0.35rem 0 0.85rem;
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    max-width: 18ch;
+  }
+
+  .lede {
+    max-width: 38rem;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  .trip-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.75rem 1.25rem;
+  }
+
+  @media (max-width: 900px) {
+    .trip-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .trip-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

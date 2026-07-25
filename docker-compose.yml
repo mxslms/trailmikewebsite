@@ -2,22 +2,27 @@ version: '3.8'
 
 services:
   web:
-    image: nginx:alpine
-    container_name: hello-world-web
+    build: .
+    image: trailmike-web:latest
+    container_name: trailmike-web
     restart: unless-stopped
     ports:
       - "8085:80"
-    volumes:
-      - ./index.html:/usr/share/nginx/html/index.html:ro
     networks:
       - web-network
+
   tunnel:
     image: cloudflare/cloudflared:latest
     container_name: cloudflare-tunnel
     restart: unless-stopped
-    command: tunnel --no-autoupdate run --token REDACTED_CLOUDFLARE_TUNNEL_TOKEN
+    command: tunnel --no-autoupdate run --token ${CLOUDFLARE_TUNNEL_TOKEN}
+    environment:
+      - CLOUDFLARE_TUNNEL_TOKEN=${CLOUDFLARE_TUNNEL_TOKEN}
+    depends_on:
+      - web
     networks:
       - web-network
+
 networks:
   web-network:
     external: true

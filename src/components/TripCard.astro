@@ -1,0 +1,128 @@
+---
+import type { Trip } from '../data/trips';
+
+interface Props {
+  trip: Trip;
+}
+
+const { trip } = Astro.props;
+const href = trip.postSlug ? `/posts/${trip.postSlug}` : undefined;
+---
+
+<article class:list={['trip-card', trip.status === 'coming-soon' && 'is-soon']}>
+  {
+    href ? (
+      <a class="trip-card-link" href={href}>
+        <div class="trip-media" style={`background: ${trip.accent}`} aria-hidden="true" />
+        <div class="trip-body">
+          <p class="trip-year">{trip.year}</p>
+          <h3>{trip.name}</h3>
+          <p class="trip-location">{trip.location}</p>
+          <p>{trip.summary}</p>
+          <span class="trip-cta">Read the trip →</span>
+        </div>
+      </a>
+    ) : (
+      <div class="trip-card-link">
+        <div class="trip-media" style={`background: ${trip.accent}`} aria-hidden="true" />
+        <div class="trip-body">
+          <p class="trip-year">{trip.year}</p>
+          <h3>{trip.name}</h3>
+          <p class="trip-location">{trip.location}</p>
+          <p>{trip.summary}</p>
+          <span class="trip-cta soon">Coming soon</span>
+        </div>
+      </div>
+    )
+  }
+</article>
+
+<style>
+  .trip-card {
+    height: 100%;
+  }
+
+  .trip-card-link {
+    display: grid;
+    grid-template-rows: 8.5rem auto;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  a.trip-card-link:hover .trip-media {
+    filter: saturate(1.1) brightness(1.05);
+  }
+
+  a.trip-card-link:hover .trip-cta {
+    color: var(--trail);
+  }
+
+  .trip-media {
+    border-radius: var(--radius);
+    transition: filter 220ms var(--ease-out);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .trip-media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      120deg,
+      transparent,
+      transparent 12px,
+      color-mix(in srgb, white 7%, transparent) 12px,
+      color-mix(in srgb, white 7%, transparent) 13px
+    );
+  }
+
+  .trip-body {
+    padding-top: 1rem;
+  }
+
+  .trip-year {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--stone);
+  }
+
+  h3 {
+    margin: 0.3rem 0 0.2rem;
+    font-size: 1.3rem;
+  }
+
+  .trip-location {
+    margin: 0 0 0.65rem;
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--moss);
+  }
+
+  .trip-body p:not(.trip-year):not(.trip-location) {
+    margin: 0 0 0.85rem;
+    color: var(--ink-soft);
+    font-size: 1rem;
+  }
+
+  .trip-cta {
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--spruce);
+  }
+
+  .trip-cta.soon {
+    color: var(--stone);
+  }
+
+  .is-soon {
+    opacity: 0.92;
+  }
+</style>

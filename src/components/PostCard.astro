@@ -1,0 +1,117 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  post: CollectionEntry<'posts'>;
+}
+
+const { post } = Astro.props;
+const { title, description, pubDate, category, location, coverGradient } = post.data;
+const href = `/posts/${post.id}`;
+const date = pubDate.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+});
+---
+
+<article class="post-card">
+  <a class="post-card-link" href={href}>
+    <div
+      class="post-card-media"
+      style={`background: ${coverGradient ?? 'linear-gradient(145deg, #1e3d32, #7eb8b0)'}`}
+      aria-hidden="true"
+    >
+      <span class="post-card-category">{category === 'adventure' ? 'Adventure' : 'Edge AI'}</span>
+    </div>
+    <div class="post-card-body">
+      <p class="post-card-meta">
+        <time datetime={pubDate.toISOString()}>{date}</time>
+        {location && <span aria-hidden="true">·</span>}
+        {location && <span>{location}</span>}
+      </p>
+      <h3>{title}</h3>
+      <p>{description}</p>
+    </div>
+  </a>
+</article>
+
+<style>
+  .post-card {
+    height: 100%;
+  }
+
+  .post-card-link {
+    display: grid;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 220ms var(--ease-out);
+  }
+
+  .post-card-link:hover {
+    transform: translateY(-4px);
+  }
+
+  .post-card-media {
+    position: relative;
+    min-height: 10rem;
+    border-radius: var(--radius) var(--radius) 0 0;
+    overflow: hidden;
+  }
+
+  .post-card-media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(transparent 40%, color-mix(in srgb, var(--ink) 35%, transparent)),
+      repeating-linear-gradient(
+        -18deg,
+        transparent,
+        transparent 10px,
+        color-mix(in srgb, white 8%, transparent) 10px,
+        color-mix(in srgb, white 8%, transparent) 11px
+      );
+  }
+
+  .post-card-category {
+    position: absolute;
+    left: 0.85rem;
+    bottom: 0.85rem;
+    z-index: 1;
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: white;
+  }
+
+  .post-card-body {
+    padding: 1.15rem 0 0.25rem;
+  }
+
+  .post-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0 0 0.45rem;
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--stone);
+  }
+
+  h3 {
+    margin: 0 0 0.45rem;
+    font-size: 1.25rem;
+    color: var(--spruce);
+  }
+
+  .post-card-body p:last-child {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 1rem;
+  }
+</style>

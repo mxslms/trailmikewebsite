@@ -1,0 +1,124 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('posts', ({ data }) => !data.draft && data.category === 'edge-ai')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<PageLayout
+  title="Edge AI"
+  description="Building real-time vision on Jetson — wildlife detection, observability, and lessons from the edge."
+>
+  <section class="section page-intro">
+    <div class="wrap intro-grid">
+      <div>
+        <p class="eyebrow fade-up">Edge AI</p>
+        <h1 class="fade-up-delay">AI that runs where the trail is</h1>
+        <p class="lede fade-up-delay-2">
+          A build journal for edge computer vision — starting with a Jetson Orin Nano, YOLOv8, and a
+          path toward wildlife and fish detection in the field. Less hype, more working systems.
+        </p>
+      </div>
+      <aside class="stack fade-up-delay-2" aria-label="Current focus">
+        <h2>Current stack</h2>
+        <ul>
+          <li>NVIDIA Jetson Orin Nano</li>
+          <li>YOLOv8 real-time detection</li>
+          <li>Prometheus + Grafana observability</li>
+          <li>Docker on home lab + edge device</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Journal</p>
+        <h2>Build notes</h2>
+        <p>Short posts as the project moves — what worked, what broke, what comes next.</p>
+      </div>
+      {
+        posts.length > 0 ? (
+          <div class="post-grid">
+            {posts.map((post) => (
+              <PostCard post={post} />
+            ))}
+          </div>
+        ) : (
+          <p class="empty">First edge AI journal entry is on the way. Adventures are live now.</p>
+        )
+      }
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .page-intro {
+    padding-bottom: 0;
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  h1 {
+    margin: 0.35rem 0 0.85rem;
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    max-width: 16ch;
+  }
+
+  .lede {
+    max-width: 38rem;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  .stack {
+    padding: 1.25rem 1.2rem;
+    border-left: 3px solid var(--ice);
+    background: color-mix(in srgb, white 60%, var(--glacier));
+  }
+
+  .stack h2 {
+    margin: 0 0 0.75rem;
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--stone);
+  }
+
+  .stack ul {
+    margin: 0;
+    padding-left: 1.1rem;
+    color: var(--ink-soft);
+    font-size: 1rem;
+  }
+
+  .stack li {
+    margin-bottom: 0.4rem;
+  }
+
+  .post-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .empty {
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 900px) {
+    .intro-grid,
+    .post-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
