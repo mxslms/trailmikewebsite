@@ -9,15 +9,20 @@ services:
     ports:
       - "8085:80"
     networks:
-      - web-network
+      web-network:
+        # Keep old Docker DNS name so existing Cloudflare ingress still resolves
+        aliases:
+          - hello-world-web
 
   tunnel:
     image: cloudflare/cloudflared:latest
     container_name: cloudflare-tunnel
     restart: unless-stopped
-    command: tunnel --no-autoupdate run --token ${CLOUDFLARE_TUNNEL_TOKEN}
+    env_file:
+      - .env
     environment:
-      - CLOUDFLARE_TUNNEL_TOKEN=${CLOUDFLARE_TUNNEL_TOKEN}
+      TUNNEL_TOKEN: ${CLOUDFLARE_TUNNEL_TOKEN:?Set CLOUDFLARE_TUNNEL_TOKEN in .env}
+    command: tunnel --no-autoupdate run
     depends_on:
       - web
     networks:
