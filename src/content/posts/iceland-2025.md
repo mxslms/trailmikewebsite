@@ -1,55 +1,85 @@
 ---
-title: "Iceland 2025 — weather, ash, and the long walk"
-description: "The first Trailmike trip journal: a backpacking trek across Iceland’s highlands and south coast, where the forecast is a suggestion and the landscape does the talking."
+title: "Iceland 2025 — Laugavegur, craters, and puffins"
+description: "July 25–August 3: ~50 miles on the Laugavegur Trail, then a Ring Road loop through geothermal country, puffins, glaciers, and a Blue Lagoon send-off. 18 PB&Js. Zero regrets."
 pubDate: 2025-08-12
 category: adventure
-location: Iceland
+location: Iceland · Laugavegur Trail
 year: 2025
 featured: true
 coverGradient: "linear-gradient(145deg, #1e3d32 0%, #3d6b8a 45%, #9fd0c8 78%, #d4a574 100%)"
 tags:
   - iceland
+  - laugavegur
   - backpacking
-  - highlands
+  - ring-road
   - multi-day
 ---
 
-Iceland does not care about your itinerary. That is part of the deal.
+**Dates:** July 25 – August 3  
+**Trail:** ~50 miles on the Laugavegur  
+**Fuel:** 18 PB&Js, 18 oatmeal packets, and endless Builder Bars
 
-This was the trip that finally pushed me to start **Trailmike** — not because it was the hardest, but because I came home with too many notes and photos sitting in folders with nowhere honest to live. No social feed. Just a place to write it down.
+## The plan & the prep
 
-## The shape of the trip
+Before the trail, logistics were their own little marathon. A 3-hour drive to Detroit, an overnight Icelandair flight, and wheels down in Iceland at 6:30 AM. We stashed road-trip bags in a locker at the Reykjavík bus station, loaded up on water, camp gas, and cheddar cheese, and caught the 12:45 bus toward the trailhead.
 
-A multi-day backpack through highland and south-coast country: volcanic ridges, black sand, glacial light, and river crossings that look friendly until you are mid-shin in meltwater. Days were long. Weather windows were short. The map stayed useful; the schedule did not.
+What powers a 50-mile Iceland trek is not complicated:
 
-I am keeping the blow-by-blow route private for now and will layer in day-by-day notes, camps, and photos as I digitize the stack. What follows is the trip as it felt — the parts worth keeping.
+- **Breakfast:** Oatmeal & dried cranberries  
+- **Lunch:** PB&Js (we pre-packed 18) and Builder / nut bars  
+- **Dinner:** Pre-packed pesto rice, taco-seasoned beans and rice with Fritos, and plenty of ramen  
 
-## What Iceland taught (again)
+<!-- Photos: drop optimized images into /public/images/iceland-2025/ and uncomment
+![Arriving at Landmannalaugar](/images/iceland-2025/day01-camp.jpg)
+-->
 
-**Respect the wind.** Gusts that feel theatrical at the trailhead become operational problems with a tall pack. Guy lines, low profiles, and humility win.
+## Part 1: The Laugavegur trek
 
-**Water is everywhere and still a plan.** Glacial silt, sudden rises after rain, and cold that makes “just ford it” a worse idea than it sounds. Crossing early, unbuckling the hipbelt, and treating every ford like it could be the day’s main event.
+### Day 1 — Landmannalaugar campground
 
-**Layers beat heroics.** Softshell, insulation you can put on without unpacking the universe, and dry socks treated like currency.
+**Arrival:** 16:20
 
-> The best moments were rarely the summit shots. They were the quiet ones — steam on the horizon, a break in the rain, the pack finally set down.
+The driver who took us into Landmannalaugar was excellent. The campsite was top-tier — solid eating area, hot water in the sinks, and surroundings that make you forget the overnight flight.
 
-## Gear that earned its weight
+Plenty of people. Drones buzzing around. Still: by Sunday morning I’d gotten real sleep thanks to a sleep mask (midnight dusk + 6 AM blazing sun is a combo). LETS GOOOOO.
 
-- A shelter that laughed at wind more than it fought it
-- Waterproof stuff sacks (redundancy beats optimism)
-- A stove setup that worked when fingers did not
-- Navigation offline — phone as backup, not the plan
-- Fewer “maybe” items than usual; more calories than felt polite
+### Day 2 — Hvanngil (17.4 miles | +1600′ / −1600′)
 
-I will publish a tighter gear list with what I would repeat and what I would leave next time.
+We pushed past Álftavatn and went straight to Hvanngil for a little more wind protection. After 17 miles with a pack, there is absolutely no better feeling than kicking off the boots, sliding into camp shoes, and making a giant pot of beans and rice.
 
-## Photos incoming
+### Day 3 — Þórsmörk (16.8 miles | −900′)
 
-The hard drives are full: ridge light, moss-covered lava, glacier tongues, and the kind of sky that makes your camera look broken in the best way. Those land here as I process them — this post is the stake in the ground.
+A mostly flat, descending day toward Þórsmörk — river energy, big valley light, and the sense that the hard climb was still waiting one more sleep away.
 
-## Why this is post #1
+### Day 4 — Skógar & back to civilization (15 miles | +3500′)
 
-Because the trail is half of what this site is for. The other half is building edge AI that can eventually ride along in places like this — detection that runs on a Jetson, not a datacenter. Adventures first. Models next. Same journal.
+Started at 6 AM for the hardest day of the trek: a massive 3,500-foot climb over the pass.
 
-If you are planning Iceland: give yourself margin, watch the road and highland access notices, and leave room for the day the weather rewrites everything. That day might be the one you remember.
+We made it back to Reykjavík by 7:30 PM. Cool city. Spent the night in an Airbnb that hit the spot — and really good pizza.
+
+## Part 2: Ring Road & northern fjords
+
+### Day 5 — Driving north to Akureyri
+
+Traded the backpack for a rental car. Snacks from Krónan, then the ~5-hour drive north to Akureyri — explore the town, settle into the apartment, let the legs remember what chairs are for.
+
+### Day 6 — Craters, geothermal stench, and puffins
+
+Coffee in Akureyri, a grocery stop, then an all-timer sightseeing day:
+
+- **Hverfjall crater** — the hike up was amazing  
+- **Hverir geothermal area** — wild colors and boiling mud pots; it stunk horribly and was still awesome  
+- **Dettifoss** — beautiful, and entirely too wet and cold  
+- **Borgarfjörður** — officially my favorite road of the trip; puffins were awesome (one promptly pooped on me)
+
+### Days 7–9 — Fjords, glaciers, Blue Lagoon
+
+**Day 7:** Seyðisfjörður toward glacier country.  
+**Day 8:** Kayaking the glacier lagoon.  
+**Day 9:** Capped it the right way — a 10 AM soak in the Blue Lagoon before the 4:55 PM flight back to Detroit.
+
+## What’s next on this post
+
+Photos from the backpack section (Days 1–3) are queued — once they’re optimized and dropped into `public/images/iceland-2025/`, they’ll land inline above. Same for Ring Road shots and a tighter gear list when I dig those notes out.
+
+If you’re planning Laugavegur: pre-pack the boring food, bring a sleep mask, and leave margin for wind that rewrites the day.

@@ -18,7 +18,7 @@ export const trips: Trip[] = [
     name: 'Iceland',
     location: 'Highlands & south coast',
     year: 2025,
-    summary: 'Volcanic ridges, glacial valleys, and weather that rewrites the plan every hour.',
+    summary: 'Laugavegur (~50 miles), then Ring Road: craters, puffins, glaciers, Blue Lagoon.',
     status: 'published',
     postSlug: 'iceland-2025',
     accent: 'linear-gradient(145deg, #1e3d32 0%, #3d6b8a 55%, #9fd0c8 100%)',
