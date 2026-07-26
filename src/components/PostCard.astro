@@ -6,22 +6,21 @@ interface Props {
 }
 
 const { post } = Astro.props;
-const { title, description, pubDate, category, location, coverGradient } = post.data;
+const { title, description, pubDate, category, location, coverGradient, coverImage } = post.data;
 const href = `/posts/${post.id}`;
 const date = pubDate.toLocaleDateString('en-US', {
   year: 'numeric',
   month: 'short',
   day: 'numeric',
 });
+const mediaStyle = coverImage
+  ? `background-image: linear-gradient(transparent 35%, color-mix(in srgb, var(--ink) 45%, transparent)), url(${coverImage}); background-size: cover; background-position: center;`
+  : `background: ${coverGradient ?? 'linear-gradient(145deg, #1e3d32, #7eb8b0)'}`;
 ---
 
 <article class="post-card">
   <a class="post-card-link" href={href}>
-    <div
-      class="post-card-media"
-      style={`background: ${coverGradient ?? 'linear-gradient(145deg, #1e3d32, #7eb8b0)'}`}
-      aria-hidden="true"
-    >
+    <div class="post-card-media" style={mediaStyle} aria-hidden="true">
       <span class="post-card-category">{category === 'adventure' ? 'Adventure' : 'Edge AI'}</span>
     </div>
     <div class="post-card-body">

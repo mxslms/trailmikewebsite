@@ -7,13 +7,16 @@ interface Props {
 
 const { trip } = Astro.props;
 const href = trip.postSlug ? `/posts/${trip.postSlug}` : undefined;
+const mediaStyle = trip.coverImage
+  ? `background-image: url(${trip.coverImage}); background-size: cover; background-position: center;`
+  : `background: ${trip.accent}`;
 ---
 
 <article class:list={['trip-card', trip.status === 'coming-soon' && 'is-soon']}>
   {
     href ? (
       <a class="trip-card-link" href={href}>
-        <div class="trip-media" style={`background: ${trip.accent}`} aria-hidden="true" />
+        <div class="trip-media" style={mediaStyle} aria-hidden="true" />
         <div class="trip-body">
           <p class="trip-year">{trip.year}</p>
           <h3>{trip.name}</h3>
@@ -24,7 +27,7 @@ const href = trip.postSlug ? `/posts/${trip.postSlug}` : undefined;
       </a>
     ) : (
       <div class="trip-card-link">
-        <div class="trip-media" style={`background: ${trip.accent}`} aria-hidden="true" />
+        <div class="trip-media" style={mediaStyle} aria-hidden="true" />
         <div class="trip-body">
           <p class="trip-year">{trip.year}</p>
           <h3>{trip.name}</h3>
