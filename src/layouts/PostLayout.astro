@@ -7,23 +7,23 @@ interface Props {
 }
 
 const { post } = Astro.props;
-const { title, description, pubDate, category, location, year, tags, coverGradient } = post.data;
+const { title, description, pubDate, category, location, year, tags, coverGradient, coverImage } =
+  post.data;
 const date = pubDate.toLocaleDateString('en-US', {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
 });
+const heroStyle = coverImage
+  ? `background-image: linear-gradient(180deg, color-mix(in srgb, #0d1a14 15%, transparent), color-mix(in srgb, #0d1a14 45%, transparent)), url(${coverImage}); background-size: cover; background-position: center;`
+  : `background: ${coverGradient ?? 'linear-gradient(145deg, #1e3d32, #7eb8b0)'}`;
 ---
 
 <PageLayout title={title} description={description} ogType="article">
   <article class="post">
     <header class="post-hero">
-      <div
-        class="post-hero-visual"
-        style={`background: ${coverGradient ?? 'linear-gradient(145deg, #1e3d32, #7eb8b0)'}`}
-        aria-hidden="true"
-      >
-        <div class="post-hero-topo"></div>
+      <div class="post-hero-visual" style={heroStyle} aria-hidden="true">
+        {!coverImage && <div class="post-hero-topo" />}
       </div>
       <div class="wrap post-hero-copy fade-up">
         <p class="eyebrow">
@@ -156,6 +156,27 @@ const date = pubDate.toLocaleDateString('en-US', {
   .post-content :global(strong) {
     font-weight: 700;
     color: var(--spruce);
+  }
+
+  .post-content :global(img) {
+    width: 100%;
+    margin: 1.5rem 0 0.35rem;
+    border-radius: var(--radius);
+  }
+
+  .post-content :global(p > img) {
+    display: block;
+  }
+
+  .post-content :global(figcaption),
+  .post-content :global(em:has(+ img)),
+  .post-content :global(img + em) {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    font-style: normal;
+    color: var(--stone);
+    margin: 0 0 1.25rem;
   }
 
   .tags {
