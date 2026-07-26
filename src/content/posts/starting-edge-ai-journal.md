@@ -28,4 +28,4 @@ I want models that run **where the trail is** — not only in a cloud notebook. 
 
 A hype feed. No “AI will change everything” posts. Just build notes: what worked, what broke, what I would do differently.
 
-The first adventure post — [Iceland 2025](/posts/iceland-2025) — is live. This entry opens the second track. More soon as the Jetson stack settles.
+The first adventure post — [Iceland 2025](/posts/iceland-2025) — is live. The first real Jetson write-up is here: [Jetson Orin Nano — flashing, shipping containers to the edge](/posts/jetson-orin-nano-edge-ai).
