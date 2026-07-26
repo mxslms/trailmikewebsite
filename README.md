@@ -68,15 +68,34 @@ draft: false
 
 ```bash
 cp .env.example .env
-# set CLOUDFLARE_TUNNEL_TOKEN in .env
+# Put the Cloudflare tunnel token in .env as CLOUDFLARE_TUNNEL_TOKEN=...
 
-docker compose build
-docker compose up -d
+docker network create web-network 2>/dev/null || true
+docker compose up -d --build
+docker compose ps
+docker logs cloudflare-tunnel --tail 50
 ```
 
 Serves on host port **8085**. The Cloudflare tunnel companion publishes trailmike.com.
 
-> **Note:** The tunnel token used to live in `docker-compose.yml`. It now reads from `.env` (`CLOUDFLARE_TUNNEL_TOKEN`). Put the existing token there on the host before redeploying.
+### Cloudflare Tunnel (Error 1033)
+
+**1033 = `cloudflared` is not connected.** Almost always a missing/empty token after deploy.
+
+1. On the host, ensure `.env` exists next to `docker-compose.yml` with a real token:
+   ```bash
+   # recover token from older commit if needed:
+   git show f7a493e:docker-compose.yml | grep -oE 'eyJ[A-Za-z0-9._-]+'
+   nano .env   # CLOUDFLARE_TUNNEL_TOKEN=eyJ...
+   ```
+2. Recreate the stack:
+   ```bash
+   docker compose up -d --build --force-recreate
+   docker logs -f cloudflare-tunnel
+   ```
+   Healthy logs mention connection registered / served via edge.
+3. In Cloudflare Zero Trust → Networks → Tunnels, status should be **Healthy**.
+4. Public hostname service should be `http://trailmike-web:80` (or `http://hello-world-web:80` — both resolve on the Docker network).
 
 ## Content philosophy
 
