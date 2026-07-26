@@ -1,0 +1,64 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+---
+
+<PageLayout
+  title="About"
+  description="Trailmike is a quiet journal of backpacking adventures and building edge AI — no social feeds required."
+>
+  <section class="section">
+    <div class="wrap about">
+      <p class="eyebrow fade-up">About</p>
+      <h1 class="fade-up-delay">Trailmike</h1>
+      <div class="prose fade-up-delay-2">
+        <p>
+          I’m Mike. I backpack when I can, and I’m building edge AI systems when I’m home — currently
+          real-time vision on a Jetson, aimed at wildlife and fish detection in the field.
+        </p>
+        <p>
+          This site is a journal, not a brand machine. No Facebook. No Instagram. Just trip write-ups
+          and build notes I want to keep in one place.
+        </p>
+        <p>
+          You’ll find route notes, weather, gear lessons, and the moments that stuck from trips like
+          Iceland, Glacier, Zion and the Grand Canyon, the Tetons, Yellowstone, and Olympic. On the
+          tech side: what it takes to ship models that run off the cloud.
+        </p>
+        <p>
+          I keep personal details light on purpose. If something here is useful for your own trip or
+          build, that’s enough.
+        </p>
+      </div>
+      <div class="about-actions fade-up-delay-2">
+        <a class="btn btn-primary" href="/adventures">Browse adventures</a>
+        <a class="btn btn-ghost" href="/edge-ai">Edge AI journal</a>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .about {
+    max-width: 40rem;
+  }
+
+  h1 {
+    margin: 0.35rem 0 1.25rem;
+    font-size: clamp(2.4rem, 6vw, 3.8rem);
+  }
+
+  .prose {
+    color: var(--ink-soft);
+  }
+
+  .prose p {
+    font-size: 1.15rem;
+  }
+
+  .about-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.75rem;
+  }
+</style>
