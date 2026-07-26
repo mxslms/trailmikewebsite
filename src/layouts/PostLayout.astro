@@ -1,0 +1,211 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import PageLayout from './PageLayout.astro';
+
+interface Props {
+  post: CollectionEntry<'posts'>;
+}
+
+const { post } = Astro.props;
+const { title, description, pubDate, category, location, year, tags, coverGradient, coverImage } =
+  post.data;
+const date = pubDate.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+const heroStyle = coverImage
+  ? `background-image: linear-gradient(180deg, color-mix(in srgb, #0d1a14 15%, transparent), color-mix(in srgb, #0d1a14 45%, transparent)), url(${coverImage}); background-size: cover; background-position: center;`
+  : `background: ${coverGradient ?? 'linear-gradient(145deg, #1e3d32, #7eb8b0)'}`;
+---
+
+<PageLayout title={title} description={description} ogType="article">
+  <article class="post">
+    <header class="post-hero">
+      <div class="post-hero-visual" style={heroStyle} aria-hidden="true">
+        {!coverImage && <div class="post-hero-topo" />}
+      </div>
+      <div class="wrap post-hero-copy fade-up">
+        <p class="eyebrow">
+          {category === 'adventure' ? 'Adventure' : 'Edge AI'}
+          {year ? ` · ${year}` : ''}
+        </p>
+        <h1>{title}</h1>
+        <p class="lede">{description}</p>
+        <p class="meta">
+          <time datetime={pubDate.toISOString()}>{date}</time>
+          {location && <span aria-hidden="true">·</span>}
+          {location && <span>{location}</span>}
+        </p>
+      </div>
+    </header>
+
+    <div class="wrap post-content fade-up-delay">
+      <slot />
+      {
+        tags.length > 0 && (
+          <ul class="tags">
+            {tags.map((tag) => (
+              <li>{tag}</li>
+            ))}
+          </ul>
+        )
+      }
+      <p class="back">
+        <a href="/posts">← All journal entries</a>
+      </p>
+    </div>
+  </article>
+</PageLayout>
+
+<style>
+  .post-hero {
+    position: relative;
+  }
+
+  .post-hero-visual {
+    position: relative;
+    min-height: clamp(16rem, 42vh, 26rem);
+    overflow: hidden;
+  }
+
+  .post-hero-topo {
+    position: absolute;
+    inset: 0;
+    opacity: 0.35;
+    background:
+      radial-gradient(circle at 20% 30%, color-mix(in srgb, white 25%, transparent), transparent 40%),
+      repeating-linear-gradient(
+        -12deg,
+        transparent,
+        transparent 14px,
+        color-mix(in srgb, white 10%, transparent) 14px,
+        color-mix(in srgb, white 10%, transparent) 15px
+      );
+    animation: shimmer 8s ease-in-out infinite;
+  }
+
+  .post-hero-copy {
+    position: relative;
+    max-width: 46rem;
+    padding-block: var(--space-lg) var(--space-md);
+  }
+
+  h1 {
+    margin: 0.4rem 0 0.75rem;
+    font-size: clamp(2rem, 5vw, 3.1rem);
+  }
+
+  .lede {
+    margin: 0 0 0.85rem;
+    color: var(--ink-soft);
+    font-size: 1.15rem;
+  }
+
+  .meta {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--stone);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .post-content {
+    max-width: var(--measure);
+    padding-block: var(--space-md) var(--space-xl);
+  }
+
+  .post-content :global(h2) {
+    margin: 2rem 0 0.75rem;
+    font-size: 1.55rem;
+  }
+
+  .post-content :global(h3) {
+    margin: 1.5rem 0 0.55rem;
+    font-size: 1.2rem;
+  }
+
+  .post-content :global(ul),
+  .post-content :global(ol) {
+    padding-left: 1.25rem;
+    margin: 0 0 1.1em;
+  }
+
+  .post-content :global(li) {
+    margin-bottom: 0.35em;
+  }
+
+  .post-content :global(blockquote) {
+    margin: 1.5rem 0;
+    padding: 0.85rem 1.1rem;
+    border-left: 3px solid var(--ice);
+    background: color-mix(in srgb, var(--glacier) 35%, transparent);
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
+  .post-content :global(hr) {
+    border: 0;
+    border-top: 1px solid color-mix(in srgb, var(--spruce) 15%, transparent);
+    margin: 2rem 0;
+  }
+
+  .post-content :global(strong) {
+    font-weight: 700;
+    color: var(--spruce);
+  }
+
+  .post-content :global(img) {
+    width: 100%;
+    margin: 1.5rem 0 0.35rem;
+    border-radius: var(--radius);
+  }
+
+  .post-content :global(p > img) {
+    display: block;
+  }
+
+  .post-content :global(figcaption),
+  .post-content :global(em:has(+ img)),
+  .post-content :global(img + em) {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    font-style: normal;
+    color: var(--stone);
+    margin: 0 0 1.25rem;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 2rem 0 0;
+    padding: 0;
+  }
+
+  .tags li {
+    font-family: var(--font-ui);
+    font-size: 0.78rem;
+    font-weight: 650;
+    letter-spacing: 0.04em;
+    color: var(--moss);
+    background: color-mix(in srgb, var(--glacier) 55%, white);
+    padding: 0.35rem 0.65rem;
+    border-radius: var(--radius);
+  }
+
+  .back {
+    margin-top: 2rem;
+    font-family: var(--font-ui);
+    font-weight: 650;
+  }
+
+  .back a {
+    text-decoration: none;
+  }
+</style>

@@ -1,0 +1,67 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-brand">Trailmike</p>
+      <p class="footer-note">Miles on trail. Models at the edge.</p>
+    </div>
+    <nav aria-label="Footer">
+      <a href="/adventures">Adventures</a>
+      <a href="/edge-ai">Edge AI</a>
+      <a href="/posts">Journal</a>
+      <a href="/about">About</a>
+    </nav>
+    <p class="footer-copy">© {year} Trailmike · Built for the long walk</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    margin-top: var(--space-2xl);
+    padding-block: var(--space-xl);
+    border-top: 1px solid color-mix(in srgb, var(--spruce) 12%, transparent);
+    background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--spruce) 6%, transparent));
+  }
+
+  .footer-inner {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .footer-brand {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.15rem;
+    color: var(--spruce);
+    margin: 0;
+  }
+
+  .footer-note,
+  .footer-copy {
+    margin: 0.25rem 0 0;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem 1.25rem;
+  }
+
+  nav a {
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--spruce);
+  }
+
+  .footer-copy {
+    font-size: 0.85rem;
+    color: var(--stone);
+  }
+</style>

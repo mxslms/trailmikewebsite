@@ -1,0 +1,189 @@
+---
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+
+const links = [
+  { href: '/adventures', label: 'Adventures' },
+  { href: '/edge-ai', label: 'Edge AI' },
+  { href: '/posts', label: 'Journal' },
+  { href: '/about', label: 'About' },
+];
+
+function isActive(href: string) {
+  if (href === '/') return pathname === '/';
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
+---
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/" aria-label="Trailmike home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Trailmike</span>
+    </a>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-nav"
+      data-nav-toggle
+    >
+      <span class="sr-only">Menu</span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+
+    <nav id="site-nav" class="site-nav" data-nav>
+      <ul>
+        {
+          links.map((link) => (
+            <li>
+              <a href={link.href} aria-current={isActive(link.href) ? 'page' : undefined}>
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector('[data-nav-toggle]');
+  const nav = document.querySelector('[data-nav]');
+
+  toggle?.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    nav?.classList.toggle('is-open', !open);
+  });
+</script>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    backdrop-filter: blur(12px);
+    background: color-mix(in srgb, var(--paper) 82%, transparent);
+    border-bottom: 1px solid color-mix(in srgb, var(--spruce) 10%, transparent);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 4.25rem;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    text-decoration: none;
+    color: var(--spruce);
+  }
+
+  .brand-mark {
+    width: 0.85rem;
+    height: 0.85rem;
+    border-radius: 0.15rem;
+    background: linear-gradient(135deg, var(--trail), var(--ice));
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--ice) 40%, transparent);
+  }
+
+  .brand-name {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: -0.03em;
+  }
+
+  .site-nav ul {
+    display: flex;
+    gap: 0.25rem 1.35rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-nav a {
+    position: relative;
+    font-family: var(--font-ui);
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--ink-soft);
+    text-decoration: none;
+  }
+
+  .site-nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.3rem;
+    width: 100%;
+    height: 2px;
+    background: var(--trail);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 220ms var(--ease-out);
+  }
+
+  .site-nav a:hover,
+  .site-nav a[aria-current='page'] {
+    color: var(--spruce);
+  }
+
+  .site-nav a[aria-current='page']::after,
+  .site-nav a:hover::after {
+    transform: scaleX(1);
+  }
+
+  .nav-toggle {
+    display: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid color-mix(in srgb, var(--spruce) 20%, transparent);
+    border-radius: var(--radius);
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .nav-toggle span:not(.sr-only) {
+    display: block;
+    width: 1.1rem;
+    height: 2px;
+    margin: 0.28rem auto;
+    background: var(--spruce);
+  }
+
+  @media (max-width: 720px) {
+    .nav-toggle {
+      display: inline-grid;
+      place-content: center;
+    }
+
+    .site-nav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      display: none;
+      padding: 0.75rem 1rem 1.25rem;
+      background: color-mix(in srgb, var(--paper) 96%, white);
+      border-bottom: 1px solid color-mix(in srgb, var(--spruce) 10%, transparent);
+    }
+
+    .site-nav.is-open {
+      display: block;
+    }
+
+    .site-nav ul {
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+  }
+</style>

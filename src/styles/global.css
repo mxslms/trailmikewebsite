@@ -1,0 +1,242 @@
+:root {
+  --ink: #142019;
+  --ink-soft: #3a4a40;
+  --spruce: #1e3d32;
+  --moss: #3d6b54;
+  --ice: #7eb8b0;
+  --glacier: #c5e4e0;
+  --mist: #e8f0ec;
+  --paper: #f4f8f6;
+  --stone: #8a7a64;
+  --trail: #c45c26;
+  --trail-deep: #9a3f14;
+  --white: #ffffff;
+  --shadow: color-mix(in srgb, var(--spruce) 18%, transparent);
+
+  --font-display: "Bricolage Grotesque", "Segoe UI", sans-serif;
+  --font-body: "Source Serif 4", "Georgia", serif;
+  --font-ui: "Bricolage Grotesque", "Segoe UI", sans-serif;
+
+  --space-xs: 0.35rem;
+  --space-sm: 0.75rem;
+  --space-md: 1.25rem;
+  --space-lg: 2rem;
+  --space-xl: 3.5rem;
+  --space-2xl: 5.5rem;
+
+  --max: 70rem;
+  --measure: 42rem;
+  --radius: 0.35rem;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse 120% 80% at 10% -10%, color-mix(in srgb, var(--ice) 35%, transparent), transparent 55%),
+    radial-gradient(ellipse 90% 60% at 100% 0%, color-mix(in srgb, var(--moss) 12%, transparent), transparent 50%),
+    linear-gradient(180deg, var(--mist) 0%, var(--paper) 40%, var(--paper) 100%);
+  background-attachment: fixed;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--moss);
+  text-underline-offset: 0.18em;
+  transition: color 160ms var(--ease-out);
+}
+
+a:hover {
+  color: var(--trail);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--spruce);
+}
+
+p {
+  margin: 0 0 1.1em;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.wrap {
+  width: min(100% - 2rem, var(--max));
+  margin-inline: auto;
+}
+
+.eyebrow {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  padding: 0.85rem 1.35rem;
+  border-radius: var(--radius);
+  border: 1.5px solid transparent;
+  transition:
+    transform 200ms var(--ease-out),
+    background 200ms var(--ease-out),
+    color 200ms var(--ease-out),
+    border-color 200ms var(--ease-out);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--spruce);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: var(--trail);
+  color: var(--white);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--spruce);
+  border-color: color-mix(in srgb, var(--spruce) 30%, transparent);
+}
+
+.btn-ghost:hover {
+  border-color: var(--spruce);
+  color: var(--spruce);
+}
+
+.section {
+  padding-block: var(--space-xl);
+}
+
+.section-head {
+  max-width: 36rem;
+  margin-bottom: var(--space-lg);
+}
+
+.section-head h2 {
+  margin: 0.35rem 0 0.65rem;
+  font-size: clamp(1.75rem, 3vw, 2.35rem);
+}
+
+.section-head p {
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.fade-up {
+  animation: fadeUp 800ms var(--ease-out) forwards;
+}
+
+.fade-up-delay {
+  animation: fadeUp 900ms var(--ease-out) 120ms forwards;
+}
+
+.fade-up-delay-2 {
+  animation: fadeUp 1000ms var(--ease-out) 240ms forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0.35;
+    transform: translateY(0.75rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(1.5%, -1%, 0) scale(1.03);
+  }
+}
+
+@keyframes shimmer {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .fade-up,
+  .fade-up-delay,
+  .fade-up-delay-2,
+  .hero-atmosphere,
+  .hero-topo {
+    animation: none !important;
+  }
+
+  .btn:hover {
+    transform: none;
+  }
+}

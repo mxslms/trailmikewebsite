@@ -1,0 +1,354 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { getCollection } from 'astro:content';
+import PostCard from '../components/PostCard.astro';
+import { trips } from '../data/trips';
+
+const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+const featured = posts.find((p) => p.data.featured) ?? posts[0];
+const latestTrips = trips.slice(0, 4);
+---
+
+<PageLayout
+  title="Trailmike"
+  description="Backpacking adventures and an edge AI journey — miles on trail, models at the edge."
+>
+  <section class="hero">
+    <div class="hero-atmosphere" aria-hidden="true"></div>
+    <div class="hero-topo" aria-hidden="true"></div>
+    <div class="wrap hero-copy">
+      <p class="eyebrow fade-up">trailmike.com</p>
+      <h1 class="fade-up-delay">Trailmike</h1>
+      <p class="hero-lede fade-up-delay-2">
+        Miles on trail. Models at the edge. A quiet journal of backpacking trips and building AI that
+        runs in the field.
+      </p>
+      <div class="hero-actions fade-up-delay-2">
+        <a class="btn btn-primary" href="/adventures">Explore adventures</a>
+        <a class="btn btn-ghost" href="/edge-ai">Follow the edge AI build</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">On the trail</p>
+        <h2>Adventures worth unpacking</h2>
+        <p>Trip notes from Iceland, Glacier, the Utah parks, Tetons, Yellowstone, Olympic, and more.</p>
+      </div>
+      <div class="trip-strip">
+        {
+          latestTrips.map((trip) => (
+            <a
+              class:list={['trip-chip', trip.status === 'coming-soon' && 'soon']}
+              href={trip.postSlug ? `/posts/${trip.postSlug}` : '/adventures'}
+            >
+              <span class="trip-chip-year">{trip.year}</span>
+              <span class="trip-chip-name">{trip.name}</span>
+            </a>
+          ))
+        }
+      </div>
+      <p class="section-more">
+        <a href="/adventures">Full adventure map →</a>
+      </p>
+    </div>
+  </section>
+
+  {
+    featured && (
+      <section class="section featured">
+        <div class="wrap featured-grid">
+          <div class="section-head">
+            <p class="eyebrow">Latest from the journal</p>
+            <h2>{featured.data.title}</h2>
+            <p>{featured.data.description}</p>
+            <a class="btn btn-primary" href={`/posts/${featured.id}`}>
+              Read the first post
+            </a>
+          </div>
+          <div
+            class="featured-visual"
+            style={`background: ${featured.data.coverGradient ?? 'linear-gradient(145deg, #1e3d32, #7eb8b0)'}`}
+            aria-hidden="true"
+          />
+        </div>
+      </section>
+    )
+  }
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Two tracks</p>
+        <h2>Where this site is going</h2>
+        <p>Not a social feed — just the stories worth keeping: trails behind me, and edge AI ahead.</p>
+      </div>
+      <div class="track-grid">
+        <a class="track" href="/adventures">
+          <h3>Backpacking</h3>
+          <p>Trip journals with route notes, weather, gear, and the moments that stick.</p>
+        </a>
+        <a class="track" href="/edge-ai">
+          <h3>Edge AI</h3>
+          <p>Building real-time vision on Jetson — wildlife detection that runs where the trail is.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {
+    posts.length > 1 && (
+      <section class="section">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="eyebrow">Journal</p>
+            <h2>More entries</h2>
+          </div>
+          <div class="post-grid">
+            {posts.slice(0, 3).map((post) => (
+              <PostCard post={post} />
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+</PageLayout>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: min(92vh, 52rem);
+    display: grid;
+    align-items: end;
+    overflow: hidden;
+    color: white;
+  }
+
+  .hero-atmosphere {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, color-mix(in srgb, #0d1a14 20%, transparent) 0%, color-mix(in srgb, #0d1a14 72%, transparent) 100%),
+      linear-gradient(125deg, #1a3a2e 0%, #2a5a6a 42%, #7eb8b0 78%, #d4a574 100%);
+    background-size: 100% 100%, 120% 120%;
+    animation: drift 18s ease-in-out infinite;
+  }
+
+  .hero-topo {
+    position: absolute;
+    inset: 0;
+    opacity: 0.28;
+    background-image:
+      radial-gradient(circle at 70% 35%, color-mix(in srgb, white 20%, transparent), transparent 28%),
+      repeating-linear-gradient(
+        -18deg,
+        transparent 0,
+        transparent 18px,
+        color-mix(in srgb, white 12%, transparent) 18px,
+        color-mix(in srgb, white 12%, transparent) 19px
+      );
+    animation: shimmer 10s ease-in-out infinite;
+  }
+
+  .hero-copy {
+    position: relative;
+    z-index: 1;
+    padding-block: clamp(4rem, 12vh, 7rem) clamp(3rem, 8vh, 5rem);
+    max-width: 44rem;
+  }
+
+  .hero .eyebrow {
+    color: color-mix(in srgb, white 75%, var(--ice));
+  }
+
+  .hero h1 {
+    margin: 0.35rem 0 0.85rem;
+    font-size: clamp(3.4rem, 12vw, 6.5rem);
+    letter-spacing: -0.045em;
+    color: white;
+    text-shadow: 0 8px 40px color-mix(in srgb, black 35%, transparent);
+  }
+
+  .hero-lede {
+    margin: 0 0 1.6rem;
+    max-width: 32rem;
+    font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+    color: color-mix(in srgb, white 88%, var(--glacier));
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .hero .btn-ghost {
+    color: white;
+    border-color: color-mix(in srgb, white 45%, transparent);
+  }
+
+  .hero .btn-ghost:hover {
+    color: white;
+    border-color: white;
+    background: color-mix(in srgb, white 10%, transparent);
+  }
+
+  .hero .btn-primary {
+    background: var(--trail);
+  }
+
+  .hero .btn-primary:hover {
+    background: white;
+    color: var(--spruce);
+  }
+
+  .trip-strip {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.85rem;
+  }
+
+  .trip-chip {
+    display: grid;
+    gap: 0.25rem;
+    padding: 1rem 1.05rem;
+    text-decoration: none;
+    color: inherit;
+    border-radius: var(--radius);
+    background: color-mix(in srgb, white 70%, var(--glacier));
+    border: 1px solid color-mix(in srgb, var(--spruce) 10%, transparent);
+    transition: transform 200ms var(--ease-out), border-color 200ms var(--ease-out);
+  }
+
+  .trip-chip:hover {
+    transform: translateY(-3px);
+    border-color: color-mix(in srgb, var(--moss) 40%, transparent);
+  }
+
+  .trip-chip.soon {
+    opacity: 0.75;
+  }
+
+  .trip-chip-year {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--stone);
+  }
+
+  .trip-chip-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--spruce);
+    font-size: 1.05rem;
+    line-height: 1.25;
+  }
+
+  .section-more {
+    margin-top: 1.25rem;
+    font-family: var(--font-ui);
+    font-weight: 700;
+  }
+
+  .section-more a {
+    text-decoration: none;
+  }
+
+  .featured {
+    background: linear-gradient(180deg, color-mix(in srgb, var(--spruce) 6%, transparent), transparent);
+  }
+
+  .featured-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: clamp(1.5rem, 4vw, 3rem);
+    align-items: center;
+  }
+
+  .featured-visual {
+    min-height: 18rem;
+    border-radius: var(--radius);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .featured-visual::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 30% 40%, color-mix(in srgb, white 22%, transparent), transparent 45%),
+      repeating-linear-gradient(
+        25deg,
+        transparent,
+        transparent 16px,
+        color-mix(in srgb, white 10%, transparent) 16px,
+        color-mix(in srgb, white 10%, transparent) 17px
+      );
+  }
+
+  .track-grid,
+  .post-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .post-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .track {
+    display: block;
+    padding: 1.5rem 1.35rem;
+    text-decoration: none;
+    color: inherit;
+    border-top: 3px solid var(--ice);
+    background: color-mix(in srgb, white 55%, transparent);
+    transition: border-color 200ms var(--ease-out), transform 200ms var(--ease-out);
+  }
+
+  .track:hover {
+    border-color: var(--trail);
+    transform: translateY(-3px);
+  }
+
+  .track h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.4rem;
+  }
+
+  .track p {
+    margin: 0;
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 900px) {
+    .trip-strip,
+    .featured-grid,
+    .track-grid,
+    .post-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .trip-strip,
+    .featured-grid,
+    .track-grid,
+    .post-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero {
+      min-height: 88vh;
+      align-items: end;
+    }
+  }
+</style>
