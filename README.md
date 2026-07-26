@@ -78,24 +78,25 @@ docker logs cloudflare-tunnel --tail 50
 
 Serves on host port **8085**. The Cloudflare tunnel companion publishes trailmike.com.
 
-### Cloudflare Tunnel (Error 1033)
+### Cloudflare Tunnel (Portainer)
 
-**1033 = `cloudflared` is not connected.** Almost always a missing/empty token after deploy.
+Set the token in the **Portainer stack Environment variables** UI (not only a host `.env` file — Git redeploys often ignore that):
 
-1. On the host, ensure `.env` exists next to `docker-compose.yml` with a real token:
-   ```bash
-   # recover token from older commit if needed:
-   git show f7a493e:docker-compose.yml | grep -oE 'eyJ[A-Za-z0-9._-]+'
-   nano .env   # CLOUDFLARE_TUNNEL_TOKEN=eyJ...
-   ```
-2. Recreate the stack:
-   ```bash
-   docker compose up -d --build --force-recreate
-   docker logs -f cloudflare-tunnel
-   ```
-   Healthy logs mention connection registered / served via edge.
-3. In Cloudflare Zero Trust → Networks → Tunnels, status should be **Healthy**.
-4. Public hostname service should be `http://trailmike-web:80` (or `http://hello-world-web:80` — both resolve on the Docker network).
+| Name | Value |
+| --- | --- |
+| `CLOUDFLARE_TUNNEL_TOKEN` | your tunnel token (`eyJ...`) |
+
+Then **Update the stack** / redeploy. `cloudflared` reads it as `TUNNEL_TOKEN`.
+
+**Error 1033** = tunnel not connected → token missing/wrong, or the tunnel container isn’t running.
+
+```bash
+docker logs cloudflare-tunnel --tail 50
+```
+
+Public hostname service URL: `http://trailmike-web:80` (or `http://hello-world-web:80`).
+
+CLI-only deploys can still use a local `.env` with `CLOUDFLARE_TUNNEL_TOKEN=...`.
 
 ## Content philosophy
 
