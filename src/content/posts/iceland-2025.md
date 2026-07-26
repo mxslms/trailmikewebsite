@@ -6,6 +6,7 @@ category: adventure
 location: Iceland · Laugavegur Trail
 year: 2025
 featured: true
+coverImage: /images/iceland-2025/iceland-2025-07-27-07.webp
 coverGradient: "linear-gradient(145deg, #1e3d32 0%, #3d6b8a 45%, #9fd0c8 78%, #d4a574 100%)"
 tags:
   - iceland
@@ -29,10 +30,6 @@ What powers a 50-mile Iceland trek is not complicated:
 - **Lunch:** PB&Js (we pre-packed 18) and Builder / nut bars  
 - **Dinner:** Pre-packed pesto rice, taco-seasoned beans and rice with Fritos, and plenty of ramen  
 
-<!-- Photos: drop optimized images into /public/images/iceland-2025/ and uncomment
-![Arriving at Landmannalaugar](/images/iceland-2025/day01-camp.jpg)
--->
-
 ## Part 1: The Laugavegur trek
 
 ### Day 1 — Landmannalaugar campground
@@ -41,21 +38,55 @@ What powers a 50-mile Iceland trek is not complicated:
 
 The driver who took us into Landmannalaugar was excellent. The campsite was top-tier — solid eating area, hot water in the sinks, and surroundings that make you forget the overnight flight.
 
+![Landmannalaugar campground with colorful tents under a dark volcanic ridge](/images/iceland-2025/iceland-2025-07-27-06.webp)
+
 Plenty of people. Drones buzzing around. Still: by Sunday morning I’d gotten real sleep thanks to a sleep mask (midnight dusk + 6 AM blazing sun is a combo). LETS GOOOOO.
+
+![Snack break on the hut deck overlooking snow-patched highland hills](/images/iceland-2025/iceland-2025-07-27-05.webp)
+
+![Backpackers descending into a steaming volcanic valley](/images/iceland-2025/iceland-2025-07-27-04.webp)
+
+![Celebrating on a rhyolite ridge above Landmannalaugar](/images/iceland-2025/iceland-2025-07-27-02.webp)
+
+![Arms wide on the colorful highland ridge](/images/iceland-2025/iceland-2025-07-27-03.webp)
+
+![Two hikers smiling on a rocky overlook above the rhyolite mountains](/images/iceland-2025/iceland-2025-07-27-01.webp)
+
+![Descending a dark volcanic slope past neon moss and snowfields](/images/iceland-2025/iceland-2025-07-27-07.webp)
+
+![Looking through a natural snow tunnel over a rocky stream](/images/iceland-2025/iceland-2025-07-27-08.webp)
 
 ### Day 2 — Hvanngil (17.4 miles | +1600′ / −1600′)
 
 We pushed past Álftavatn and went straight to Hvanngil for a little more wind protection. After 17 miles with a pack, there is absolutely no better feeling than kicking off the boots, sliding into camp shoes, and making a giant pot of beans and rice.
 
+![Group fording a wide highland river with packs and trekking poles](/images/iceland-2025/iceland-2025-07-28-01.webp)
+
+![Rest stop on a ridge overlooking a mossy valley and distant ice](/images/iceland-2025/iceland-2025-07-28-02.webp)
+
+![Footbridge over a mossy volcanic gorge with a river canyon beyond](/images/iceland-2025/iceland-2025-07-28-03.webp)
+
+![Crew posed on a log bridge over glacial meltwater](/images/iceland-2025/iceland-2025-07-28-04.webp)
+
 ### Day 3 — Þórsmörk (16.8 miles | −900′)
 
-A mostly flat, descending day toward Þórsmörk — river energy, big valley light, and the sense that the hard climb was still waiting one more sleep away.
+A mostly flat, descending day toward Þórsmörk — river energy, big valley light, and the sense that the hard climb was still waiting one more sleep away. The ridge weather had other ideas: fog, neon moss, and trail markers that felt like the only solid thing in the lava.
+
+![Standing on a narrow misty ridge with a red dry bag on the pack](/images/iceland-2025/iceland-2025-07-29-01.webp)
+
+![Lone hiker on a foggy volcanic ridge striped with green moss](/images/iceland-2025/iceland-2025-07-29-02.webp)
+
+![Yellow trail markers leading through a black lava field toward snowy peaks](/images/iceland-2025/iceland-2025-07-29-03.webp)
+
+![Misty two-tier waterfall in a moss-covered canyon](/images/iceland-2025/iceland-2025-07-29-04.webp)
 
 ### Day 4 — Skógar & back to civilization (15 miles | +3500′)
 
 Started at 6 AM for the hardest day of the trek: a massive 3,500-foot climb over the pass.
 
 We made it back to Reykjavík by 7:30 PM. Cool city. Spent the night in an Airbnb that hit the spot — and really good pizza.
+
+![White rental van after the trek — wheels instead of boots](/images/iceland-2025/iceland-2025-07-30-01.webp)
 
 ## Part 2: Ring Road & northern fjords
 
@@ -78,8 +109,6 @@ Coffee in Akureyri, a grocery stop, then an all-timer sightseeing day:
 **Day 8:** Kayaking the glacier lagoon.  
 **Day 9:** Capped it the right way — a 10 AM soak in the Blue Lagoon before the 4:55 PM flight back to Detroit.
 
-## What’s next on this post
-
-Photos from the backpack section (Days 1–3) are queued — once they’re optimized and dropped into `public/images/iceland-2025/`, they’ll land inline above. Same for Ring Road shots and a tighter gear list when I dig those notes out.
+Photos from the Ring Road leg will land here later. Same for a tighter gear list when I dig those notes out.
 
 If you’re planning Laugavegur: pre-pack the boring food, bring a sleep mask, and leave margin for wind that rewrites the day.

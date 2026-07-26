@@ -8,6 +8,7 @@ export interface Trip {
   summary: string;
   status: TripStatus;
   postSlug?: string;
+  coverImage?: string;
   accent: string;
 }
 
@@ -21,6 +22,7 @@ export const trips: Trip[] = [
     summary: 'Laugavegur (~50 miles), then Ring Road: craters, puffins, glaciers, Blue Lagoon.',
     status: 'published',
     postSlug: 'iceland-2025',
+    coverImage: '/images/iceland-2025/iceland-2025-07-27-07.webp',
     accent: 'linear-gradient(145deg, #1e3d32 0%, #3d6b8a 55%, #9fd0c8 100%)',
   },
   {
