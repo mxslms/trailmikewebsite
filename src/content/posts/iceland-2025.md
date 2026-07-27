@@ -2,6 +2,7 @@
 title: "Iceland 2025 — Laugavegur, craters, and puffins"
 description: "July 25–August 3: ~50 miles on the Laugavegur Trail, then a Ring Road loop through geothermal country, puffins, glaciers, and a Blue Lagoon send-off. 18 PB&Js. Zero regrets."
 pubDate: 2025-08-12
+updatedDate: 2026-07-27
 category: adventure
 location: Iceland · Laugavegur Trail
 year: 2025
@@ -82,9 +83,9 @@ A mostly flat, descending day toward Þórsmörk — river energy, big valley li
 
 ### Day 4 — Skógar & back to civilization (15 miles | +3500′)
 
-Started at 6 AM for the hardest day of the trek: a massive 3,500-foot climb over the pass.
+Started at 6 AM for the hardest day of the trek: a massive 3,500-foot climb over the pass. Amazing day — and it rained at least half of it. By the time we hit the bus, we were soaked through and shivering, waiting for the ride back to town.
 
-We made it back to Reykjavík by 7:30 PM. Cool city. Spent the night in an Airbnb that hit the spot — and really good pizza.
+We made it back to Reykjavík by 7:30 PM. Cool city. Airbnb hit the spot. And yes: each of us ate our own pizza.
 
 ![White rental van after the trek — wheels instead of boots](/images/iceland-2025/iceland-2025-07-30-01.webp)
 
@@ -92,23 +93,31 @@ We made it back to Reykjavík by 7:30 PM. Cool city. Spent the night in an Airbn
 
 ### Day 5 — Driving north to Akureyri
 
-Traded the backpack for a rental car. Snacks from Krónan, then the ~5-hour drive north to Akureyri — explore the town, settle into the apartment, let the legs remember what chairs are for.
+Traded the backpack for a rental car. Snacks from Krónan, then the ~5-hour drive north to Akureyri.
+
+Akureyri was a great town day — walked around, ate well, hung out in the backpackers’ pub. The Airbnb sat right in the city center, which is exactly what you want after four days of packing out your own kitchen.
 
 ### Day 6 — Craters, geothermal stench, and puffins
 
-Coffee in Akureyri, a grocery stop, then an all-timer sightseeing day:
+Coffee in Akureyri, a grocery stop at the mall, then an all-timer sightseeing day:
 
-- **Hverfjall crater** — the hike up was amazing  
+- **Hverfjall crater** — the hike up was amazing. Awe-inspiring scale; one of my favorite frames of the trip is the empty crater shot with nobody in it.  
 - **Hverir geothermal area** — wild colors and boiling mud pots; it stunk horribly and was still awesome  
 - **Dettifoss** — beautiful, and entirely too wet and cold  
 - **Borgarfjörður** — officially my favorite road of the trip; puffins were awesome (one promptly pooped on me)
 
-### Days 7–9 — Fjords, glaciers, Blue Lagoon
+### Day 7 — Seyðisfjörður to the glaciers
 
-**Day 7:** Seyðisfjörður toward glacier country.  
-**Day 8:** Kayaking the glacier lagoon.  
-**Day 9:** Capped it the right way — a 10 AM soak in the Blue Lagoon before the 4:55 PM flight back to Detroit.
+A nice day working the east-coast towns — slower miles, fjord light, easing toward glacier country.
 
-Photos from the Ring Road leg will land here later. Same for a tighter gear list when I dig those notes out.
+### Day 8 — Kayaking the glacier lagoon
 
-If you’re planning Laugavegur: pre-pack the boring food, bring a sleep mask, and leave margin for wind that rewrites the day.
+Kayaking the lagoon was definitely worth it. We also fit in some solid day hikes around the area — good legs-after-the-trek kind of walking.
+
+### Day 9 — Blue Lagoon & departure
+
+Capped it the right way: a 10 AM soak in the Blue Lagoon before the 4:55 PM flight back to Detroit.
+
+---
+
+If you’re planning Laugavegur: pre-pack the boring food, bring a sleep mask, and leave margin for the day the weather soaks you on the bus bench. That day might still be one of the good ones.
