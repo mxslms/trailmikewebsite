@@ -89,6 +89,8 @@ We made it back to Reykjavík by 7:30 PM. Cool city. Airbnb hit the spot. And ye
 
 ![White rental van after the trek — wheels instead of boots](/images/iceland-2025/iceland-2025-07-30-01.webp)
 
+![Reykjavík plaza in the evening — scooters, café tables, and mountains beyond the buildings](/images/iceland-2025/iceland-2025-07-30-02.webp)
+
 ## Part 2: Ring Road & northern fjords
 
 ### Day 5 — Driving north to Akureyri
@@ -99,24 +101,43 @@ Akureyri was a great town day — walked around, ate well, hung out in the backp
 
 ### Day 6 — Craters, geothermal stench, and puffins
 
-Coffee in Akureyri, a grocery stop at the mall, then an all-timer sightseeing day:
+Coffee in Akureyri, a grocery stop at the mall, then an all-timer sightseeing day.
 
-- **Hverfjall crater** — the hike up was amazing. Awe-inspiring scale; one of my favorite frames of the trip is the empty crater shot with nobody in it.  
-- **Hverir geothermal area** — wild colors and boiling mud pots; it stunk horribly and was still awesome  
-- **Dettifoss** — beautiful, and entirely too wet and cold  
-- **Borgarfjörður** — officially my favorite road of the trip; puffins were awesome (one promptly pooped on me)
+**Hverfjall crater** — the hike up was amazing. Awe-inspiring scale; one of my favorite frames of the trip is the empty crater shot with nobody in it.
+
+![Hverfjall crater from the rim — empty bowl, distant peaks, heavy sky](/images/iceland-2025/iceland-2025-07-31-01.webp)
+
+**Hverir geothermal area** — wild colors and boiling mud pots; it stunk horribly and was still awesome.
+
+![Steaming mud pot at Hverir with a boardwalk and volcanic hills beyond](/images/iceland-2025/iceland-2025-07-31-02.webp)
+
+**Dettifoss** — beautiful, and entirely too wet and cold.
+
+**Borgarfjörður** — officially my favorite road of the trip; puffins were awesome (one promptly pooped on me).
+
+![Atlantic puffin in tall green grass with a banded leg](/images/iceland-2025/iceland-2025-07-31-04.webp)
+
+![Evening camp with the white van, tents, and a dark cliff wall behind](/images/iceland-2025/iceland-2025-07-31-03.webp)
 
 ### Day 7 — Seyðisfjörður to the glaciers
 
 A nice day working the east-coast towns — slower miles, fjord light, easing toward glacier country.
 
+![Rainbow street in Seyðisfjörður leading to the blue church under a misty mountain](/images/iceland-2025/iceland-2025-08-01-01.webp)
+
+![Crew behind a chunk of ice on the black sand — Diamond Beach energy](/images/iceland-2025/iceland-2025-08-01-02.webp)
+
 ### Day 8 — Kayaking the glacier lagoon
 
 Kayaking the lagoon was definitely worth it. We also fit in some solid day hikes around the area — good legs-after-the-trek kind of walking.
 
+![Two kayakers on the glacier lagoon with icebergs on the horizon](/images/iceland-2025/iceland-2025-08-02-01.webp)
+
 ### Day 9 — Blue Lagoon & departure
 
 Capped it the right way: a 10 AM soak in the Blue Lagoon before the 4:55 PM flight back to Detroit.
+
+![Blue Lagoon entrance sign beside milky blue water and dark lava rock](/images/iceland-2025/iceland-2025-08-03-01.webp)
 
 ---
 
