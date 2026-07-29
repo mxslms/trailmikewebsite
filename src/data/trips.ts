@@ -30,8 +30,10 @@ export const trips: Trip[] = [
     name: 'Glacier National Park',
     location: 'Montana',
     year: 2024,
-    summary: 'High passes, cold lakes, and the kind of silence that sticks with you.',
-    status: 'coming-soon',
+    summary: 'Ptarmigan to Poia via Red Gap — cold swims, windy nights, Highline without packs.',
+    status: 'published',
+    postSlug: 'glacier-2024',
+    coverImage: '/images/glacier-2024/glacier-2024-07-29-02.webp',
     accent: 'linear-gradient(145deg, #243447 0%, #4a6b5a 50%, #a8c4b8 100%)',
   },
   {
