@@ -19,7 +19,7 @@ tags:
 ---
 
 **Dates:** July 28 – August 3, 2024  
-**Route:** Ptarmigan → Elizabeth → Cosley → Red Gap → Poia (Cracker Lake skipped)  
+**Route:** Ptarmigan → Elizabeth → Cosley → Red Gap → Poia → Highline  
 **Crew:** a tired, happy family that somehow still wanted more trail at the end
 
 ## Day 1 — Arrive, Logan Pass tease, Red Eagle
@@ -46,7 +46,7 @@ Then the night: wind screaming off the lake into camp, plus rain. Tarp survived.
 
 ## Day 3 — Cosley Lake (short day)
 
-Light mileage. Everyone still sore. Took it easy in the morning, hit Mist Falls on the way (went to the bottom — worth it), then Cosley.
+Light mileage. Took it easy in the morning, hit Mist Falls on the way (went to the bottom — worth it), then Cosley.
 
 Lake was beautiful. Swam. So cold. So refreshing.
 
@@ -54,13 +54,13 @@ Lake was beautiful. Swam. So cold. So refreshing.
 
 Beans and rice for dinner — Winnie called it favorite. Kids doing so great, getting along, having fun. They already want to hike every year.
 
-Pit toilets: stinky. Wind again, but camp tucked in the woods on the side of the lake — tents mostly fine, and the sound was cool.
+Wind again, but camp tucked in the woods on the side of the lake — tents mostly fine, and the sound was cool.
 
 ## Day 4 — Cosley to Poia via Red Gap Pass (~13.9 mi)
 
-Big-time ab ripper. I hate it… but I love it.
+Big-time ab ripper. Challenging as anything we’ve done — and somehow still the kind of day you grin about later.
 
-Holy crap that was hard. They all did it. Nora in beast mode. Shilling said hardest thing he’s ever done. Keegan kept pushing to the top. Winnie and I buddied up. We also partnered stretches with two hikers from Michigan who were nervous about bears — they’d already seen two close to the trail.
+Nora in beast mode. Keegan kept pushing to the top. Winnie and I buddied up. We also partnered stretches with two hikers from Michigan who were nervous about bears — they’d already seen two close to the trail.
 
 ![Resting on red rock at Red Gap Pass with a forested valley below](/images/glacier-2024/glacier-2024-07-31-02.webp)
 
@@ -74,11 +74,9 @@ Poia Lake was gorgeous. Jordan and I swam. Sooo cold. Evening light on the water
 
 Also: “Eat more kale dude” energy on trail. Watch out.
 
-## Day 5 — Hike out, skip Cracker, Highline victory lap
+## Day 5 — Hike out + Highline victory lap
 
-Hike out was tough too — steep downhill for miles. Winnie was sick; Nora was cramping hard. Group call: skip the Cracker Lake night.
-
-I hitchhiked toward the lodge with one of the Michigan hikers. A Brit in a white Mustang picked us up — and a black bear crossed the road right in front of us.
+Steep downhill for miles out to the car. I hitchhiked toward the lodge with one of the Michigan hikers. A Brit in a white Mustang picked us up — and a black bear crossed the road right in front of us.
 
 Then the reward: Highline Trail, ~8 miles out and back, **without packs**. Amazing. Much nicer when you’re not hauling the kitchen. Drove the rest of Going-to-the-Sun. Cabin on Lake McDonald, skipped rocks, tight squeeze, laughed about it. Sunflower Cafe for dinner — soooo good.
 
@@ -96,16 +94,7 @@ Drove back toward Helena through gorgeous forest and the Swan Lake area. Packed 
 
 ![Minivan packed wall-to-wall with packs, shoes, and trail debris](/images/glacier-2024/glacier-2024-08-02-01.webp)
 
-## Favorites (democracy)
-
-- **Jordan** — every place with a lake (which was all of them)  
-- **Nora** — Highline on Thursday, Cosley Lake, Red Gap peak  
-- **Winnie** — swimming Cosley; the views coming down Ptarmigan and Red Gap  
-- **Keegan** — Red Gap peak; coming out of Ptarmigan Tunnel to the red rocks; Cosley Lake  
-- **Shilling** — (still filing the report)  
-- **Me** — all of it. What a great group.
-
-## Trail food (what actually got eaten)
+## Trail food
 
 **Breakfast:** oatmeal + protein powder  
 **Lunch:** PB on tortillas / bread, honey, jelly  
@@ -119,16 +108,4 @@ Drove back toward Helena through gorgeous forest and the Swan Lake area. Packed 
 3. Pesto noodles again  
 4. Mountain meal (the “we’re done cooking fancy” night)
 
-## Rough itinerary vs. reality
-
-| Plan | What happened |
-| --- | --- |
-| Sun 7/28 — fly CMH → Bozeman, permit, Red Eagle | Done |
-| Mon 7/29 — Ptarmigan → Elizabeth Lake Foot | Done (~10.5 mi) |
-| Tue 7/30 — Elizabeth → Cosley | Done (~3.7 mi) + swim |
-| Wed 7/31 — Cosley → Poia via Red Gap | Done (~13.9 mi) + swim |
-| Thu 8/1 — Poia → Cracker Lake | **Skipped Cracker**; hiked out, Highline day hike, Lake McDonald |
-| Fri 8/2 — raft / drive Helena | Raft + bridge jump + drive |
-| Sat 8/3 — fly home | Done |
-
-If you’re building a Glacier backpack with kids who can suffer uphill and still ask to come back next year: Red Gap will hurt. Elizabeth and Cosley will heal you. Highline without a pack is the victory lap you earn.
+If you’re building a Glacier backpack with kids who can climb hard and still ask to come back next year: Red Gap will test you. Elizabeth and Cosley will heal you. Highline without a pack is the victory lap you earn.
