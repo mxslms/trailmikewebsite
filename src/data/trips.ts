@@ -41,8 +41,10 @@ export const trips: Trip[] = [
     name: 'Glacier National Park',
     location: 'Montana',
     year: 2018,
-    summary: 'A return trip — different trails, same mountain gravity.',
-    status: 'coming-soon',
+    summary: 'Gunsight east to west — Ellen Wilson beach, Sperry lemonade, raft finish.',
+    status: 'published',
+    postSlug: 'glacier-2018',
+    coverImage: '/images/glacier-2018/glacier-2018-08-07-05.webp',
     accent: 'linear-gradient(145deg, #2a3a2e 0%, #5a7a6a 55%, #c5d4c8 100%)',
   },
   {
