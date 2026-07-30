@@ -79,8 +79,10 @@ export const trips: Trip[] = [
     name: 'Olympic National Park',
     location: 'Washington',
     year: 2017,
-    summary: 'Rainforest hush, Pacific surf, and alpine meadows in the same week.',
-    status: 'coming-soon',
+    summary: 'Shi Shi beach, rainforest lake swim, Sol Duc soak, ferry into Seattle.',
+    status: 'published',
+    postSlug: 'olympic-2017',
+    coverImage: '/images/olympic-2017/olympic-2017-08-11-03.webp',
     accent: 'linear-gradient(145deg, #1a3328 0%, #2d5a48 45%, #7a9e8a 100%)',
   },
 ];
