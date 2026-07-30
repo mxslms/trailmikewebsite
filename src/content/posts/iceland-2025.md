@@ -1,6 +1,6 @@
 ---
 title: "Iceland 2025 — Laugavegur, craters, and puffins"
-description: "July 25–August 3: ~50 miles on the Laugavegur Trail, then a Ring Road loop through geothermal country, puffins, glaciers, and a Blue Lagoon send-off. 18 PB&Js. Zero regrets."
+description: "July 25–August 3: ~50 miles on the Laugavegur Trail, then a Ring Road loop through geothermal country, puffins, glaciers, and a Blue Lagoon send-off."
 pubDate: 2025-08-12
 updatedDate: 2026-07-27
 category: adventure
@@ -19,17 +19,11 @@ tags:
 
 **Dates:** July 25 – August 3  
 **Trail:** ~50 miles on the Laugavegur  
-**Fuel:** 18 PB&Js, 18 oatmeal packets, and endless Builder Bars
+
 
 ## The plan & the prep
 
 Before the trail, logistics were their own little marathon. A 3-hour drive to Detroit, an overnight Icelandair flight, and wheels down in Iceland at 6:30 AM. We stashed road-trip bags in a locker at the Reykjavík bus station, loaded up on water, camp gas, and cheddar cheese, and caught the 12:45 bus toward the trailhead.
-
-What powers a 50-mile Iceland trek is not complicated:
-
-- **Breakfast:** Oatmeal & dried cranberries  
-- **Lunch:** PB&Js (we pre-packed 18) and Builder / nut bars  
-- **Dinner:** Pre-packed pesto rice, taco-seasoned beans and rice with Fritos, and plenty of ramen  
 
 ## Part 1: The Laugavegur trek
 
