@@ -70,8 +70,10 @@ export const trips: Trip[] = [
     name: 'Tetons & Yellowstone',
     location: 'Wyoming',
     year: 2016,
-    summary: 'Granite spires, thermal weirdness, and long days under big sky.',
-    status: 'coming-soon',
+    summary: 'Heart Lake & Sheridan, then Teton Crest — Hurricane Pass into Cascade.',
+    status: 'published',
+    postSlug: 'tetons-yellowstone-2016',
+    coverImage: '/images/tetons-2016/tetons-2016-08-12-02.webp',
     accent: 'linear-gradient(145deg, #1a2f3a 0%, #3d6a7a 50%, #b8d4c8 100%)',
   },
   {
