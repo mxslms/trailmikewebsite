@@ -4,8 +4,6 @@ services:
     image: trailmike-web:latest
     container_name: trailmike-web
     restart: unless-stopped
-    ports:
-      - "8085:80"
     networks:
       web-network:
         # Keep old Docker DNS name so existing Cloudflare ingress still resolves
