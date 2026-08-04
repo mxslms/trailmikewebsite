@@ -6,6 +6,7 @@ category: edge-ai
 location: Homelab · server to edge
 year: 2026
 featured: true
+coverImage: /images/homelab-monitoring/image1.webp
 coverGradient: "linear-gradient(145deg, #142019 0%, #1e3d32 40%, #3d6b8a 75%, #7eb8b0 100%)"
 tags:
   - grafana
