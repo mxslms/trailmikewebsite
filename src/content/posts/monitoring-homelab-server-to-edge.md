@@ -34,19 +34,19 @@ Everything deploys through Portainer from Git. I split infrastructure and applic
 
 Custom Grafana dashboards, provisioned from Git, filtered by device. The server's discrete GPU and the Jetson's integrated GPU report through completely different systems (DCGM vs. tegrastats), so each got its own dashboard. Adding a second machine later means it just shows up in the dropdown.
 
-![Jetson GPU dashboard: utilization, clock, temps, power, and AI-engine activity. Threshold lines flag thermal limits at a glance.](/images/homelab-monitoring/image1.png)
+![Jetson GPU dashboard: utilization, clock, temps, power, and AI-engine activity. Threshold lines flag thermal limits at a glance.](/images/homelab-monitoring/image1.webp)
 
 *Jetson GPU dashboard: utilization, clock, temps, power, and AI-engine activity. Threshold lines flag thermal limits at a glance.*
 
-![Infra Health, filtered by device — server and Jetson overlaid on one view.](/images/homelab-monitoring/image2.png)
+![Infra Health, filtered by device — server and Jetson overlaid on one view.](/images/homelab-monitoring/image2.webp)
 
 *Infra Health, filtered by device — server and Jetson overlaid on one view.*
 
-![Server GPU (RTX 3070) via DCGM: utilization, clock, temperature, power, and VRAM.](/images/homelab-monitoring/image3.png)
+![Server GPU (RTX 3070) via DCGM: utilization, clock, temperature, power, and VRAM.](/images/homelab-monitoring/image3.webp)
 
 *Server GPU (RTX 3070) via DCGM: utilization, clock, temperature, power, and VRAM.*
 
-![Vision app metrics: inference latency, throughput, detected classes, and model confidence.](/images/homelab-monitoring/image4.png)
+![Vision app metrics: inference latency, throughput, detected classes, and model confidence.](/images/homelab-monitoring/image4.webp)
 
 *Vision app metrics: inference latency, throughput, detected classes, and model confidence.*
 
