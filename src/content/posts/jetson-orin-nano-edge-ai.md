@@ -20,7 +20,7 @@ tags:
 **Hardware:** NVIDIA Jetson Orin Nano (ARM64)  
 **Stack:** Docker Compose, systemd, GitHub Actions, GHCR, Tailscale, Prometheus, Grafana
 
-The goal is simple to say and annoying to do: run real-time vision **on the edge**, not only on the home GPU box. Same app idea on x86 and Jetson — different containers, shared code — with a path toward wildlife and fish detection in the field.
+The goal is simple to say and annoying to do: run real-time vision **on the edge**, not only on the home GPU box. Same app idea on x86 and Jetson — different containers, shared code — with a path toward wildlife detection in the field.
 
 ![Unboxing the Jetson Orin Nano Developer Kit](/images/jetson/jetson-2026-06-15.webp)
 
