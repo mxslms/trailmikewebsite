@@ -61,8 +61,10 @@ export const trips: Trip[] = [
     name: 'Bryce · Grand Canyon · Zion',
     location: 'Utah & Arizona',
     year: 2014,
-    summary: 'Hoodoos at dawn, rim light at dusk, and red rock that photographs itself.',
-    status: 'coming-soon',
+    summary: 'Narrows top-down, canyoneering, Bryce Jr. Rangers, Grand Canyon fog to clear.',
+    status: 'published',
+    postSlug: 'utah-arizona-2014',
+    coverImage: '/images/southwest-2014/southwest-2014-08-10-04.webp',
     accent: 'linear-gradient(145deg, #5c2e1a 0%, #a85a32 45%, #e8b896 100%)',
   },
   {
