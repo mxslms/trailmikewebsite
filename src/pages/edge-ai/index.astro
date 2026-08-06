@@ -10,25 +10,25 @@ const posts = (await getCollection('posts', ({ data }) => !data.draft && data.ca
 
 <PageLayout
   title="Edge AI"
-  description="Building real-time vision on Jetson — wildlife detection, observability, and lessons from the edge."
+  description="Build notes for real-time vision on a Jetson Orin Nano — detection, Docker, and observability."
 >
   <section class="section page-intro">
     <div class="wrap intro-grid">
       <div>
         <p class="eyebrow fade-up">Edge AI</p>
-        <h1 class="fade-up-delay">AI that runs where the trail is</h1>
+        <h1 class="fade-up-delay">Edge AI on Jetson</h1>
         <p class="lede fade-up-delay-2">
-          A build journal for edge computer vision — starting with a Jetson Orin Nano, YOLOv8, and a
-          path toward wildlife detection in the field.
+          Notes from building a real-time vision pipeline on an NVIDIA Jetson Orin Nano — YOLOv8,
+          Docker, and Prometheus metrics — with wildlife detection as the longer goal.
         </p>
       </div>
       <aside class="stack fade-up-delay-2" aria-label="Current focus">
         <h2>Current stack</h2>
         <ul>
-          <li>NVIDIA Jetson Orin Nano</li>
-          <li>YOLOv8 real-time detection</li>
-          <li>Prometheus + Grafana observability</li>
-          <li>Docker on home lab + edge device</li>
+          <li>NVIDIA Jetson Orin Nano (JetPack 6)</li>
+          <li>YOLOv8n on a USB webcam</li>
+          <li>Prometheus + Grafana metrics</li>
+          <li>Docker image published to GHCR</li>
         </ul>
       </aside>
     </div>

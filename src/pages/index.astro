@@ -13,7 +13,7 @@ const latestTrips = trips.slice(0, 4);
 
 <PageLayout
   title="Trailmike"
-  description="Backpacking adventures and an edge AI journey — miles on trail, models at the edge."
+  description="Backpacking trip journals and notes from building real-time vision on a Jetson."
 >
   <section class="hero">
     <div class="hero-atmosphere" aria-hidden="true"></div>
@@ -22,12 +22,11 @@ const latestTrips = trips.slice(0, 4);
       <p class="eyebrow fade-up">trailmike.com</p>
       <h1 class="fade-up-delay">Trailmike</h1>
       <p class="hero-lede fade-up-delay-2">
-        Miles on trail. Models at the edge. A quiet journal of backpacking trips and building AI that
-        runs in the field.
+        Trip journals from the trail, and notes from building edge AI on a Jetson Orin Nano.
       </p>
       <div class="hero-actions fade-up-delay-2">
         <a class="btn btn-primary" href="/adventures">Explore adventures</a>
-        <a class="btn btn-ghost" href="/edge-ai">Follow the edge AI build</a>
+        <a class="btn btn-ghost" href="/edge-ai">Edge AI journal</a>
       </div>
     </div>
   </section>
@@ -67,7 +66,7 @@ const latestTrips = trips.slice(0, 4);
             <h2>{featured.data.title}</h2>
             <p>{featured.data.description}</p>
             <a class="btn btn-primary" href={`/posts/${featured.id}`}>
-              Read the first post
+              Read the post
             </a>
           </div>
           <div
@@ -88,8 +87,8 @@ const latestTrips = trips.slice(0, 4);
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Two tracks</p>
-        <h2>Where this site is going</h2>
-        <p>Not a social feed — just the stories worth keeping: trails behind me, and edge AI ahead.</p>
+        <h2>What’s here</h2>
+        <p>Trip journals from past hikes, and a separate journal for the edge AI project.</p>
       </div>
       <div class="track-grid">
         <a class="track" href="/adventures">
@@ -98,7 +97,7 @@ const latestTrips = trips.slice(0, 4);
         </a>
         <a class="track" href="/edge-ai">
           <h3>Edge AI</h3>
-          <p>Building real-time vision on Jetson — wildlife detection that runs where the trail is.</p>
+          <p>Real-time vision on a Jetson Orin Nano — detection, Docker, and metrics, aimed at wildlife later.</p>
         </a>
       </div>
     </div>
