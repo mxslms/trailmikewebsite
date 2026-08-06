@@ -85,7 +85,7 @@ Drove to Grand Canyon. Early evening — completely socked in fog. Barely saw an
 
 Morning — and we could see it. Amazing. Big. Grand.
 
-Day hikes, camp downtime, rummy with the girls. Easy day. Monkey bread for breakfast, eggs in the dutch oven for dinner. Oscar helpful with tent. Girls on dishes. Lost the keys — Nora found them in the cooler. Good find. Lots of flowers; Winnie and I photographed a bunch.
+Day hikes, camp downtime, rummy with the girls. Easy day. Monkey bread for breakfast, eggs in the dutch oven for dinner.
 
 ![Rim crew with the canyon wide open](/images/southwest-2014/southwest-2014-08-14-01.webp)
 
