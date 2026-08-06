@@ -1,10 +1,10 @@
 ---
 title: "Starting the edge AI journal"
 description: "Before the Jetson lives in the field: why I’m building real-time vision at the edge, and what this journal will track."
-pubDate: 2025-08-20
+pubDate: 2026-07-20
 category: edge-ai
 location: Home lab → Jetson
-year: 2025
+year: 2026
 coverImage: /images/jetson/jetson-2026-06-19.webp
 coverGradient: "linear-gradient(145deg, #142019 0%, #1e3d32 40%, #3d6b8a 75%, #7eb8b0 100%)"
 tags:
