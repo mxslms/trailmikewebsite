@@ -1,6 +1,6 @@
 ---
 title: "Glacier 2013 — West to east with Oscar"
-description: "August 2013 in Glacier National Park: drive in from Great Falls, Snyder storm and fuel run, Sperry to Gunsight with goats and flowers, berries toward Reynolds, Red Eagle swim."
+description: "August 2013 in Glacier: West Glacier to Lincoln Lake, Snyder, Gunsight, Reynolds Creek, Red Eagle, then back out to West Glacier and home."
 pubDate: 2013-08-20
 updatedDate: 2026-08-08
 category: adventure
@@ -14,15 +14,15 @@ tags:
   - montana
   - backpacking
   - gunsight
-  - sperry
+  - lincoln-lake
   - multi-day
 ---
 
 **Dates:** August 11 – 15, 2013  
-**Route:** West Glacier → Snyder → Sperry → Gunsight → Reynolds Creek → Red Eagle  
+**Route:** West Glacier → Lincoln Lake → Snyder Lake → Gunsight → Reynolds Creek → Red Eagle → West Glacier → home  
 **Crew:** Mike and Oscar — the trip that made backpacking stick
 
-West to east. More uphill than the other way — we knew it in theory, then we felt it. Hardly any people. Cloud inverted over deepest blue sky. Awesome sunset on the drive in from Great Falls.
+West to east, then back out the west side. More uphill that direction — we knew it in theory, then we felt it. Hardly any people. Cloud inverted over deepest blue sky. Awesome sunset on the drive in from Great Falls.
 
 Forgot my base layer. Oscar forgot a spork. I forgot a buff. Camp sandals and sleeping pads: good. Beef jerky: bad.
 
@@ -32,31 +32,35 @@ Forgot my base layer. Oscar forgot a spork. I forgot a buff. Camp sandals and sl
 
 Up at 4:30am in the West Glacier motel. Internal clock still on 6am ET. Too excited to go back to sleep.
 
-## Into the west side · Snyder
+## Lincoln Lake
 
-Forest miles, log bridges, and the kind of quiet that makes every creek sound loud.
+Into the backcountry. Forest miles, log bridges, and the kind of quiet that makes every creek sound loud.
 
 ![Oscar on a log bridge over a mossy creek](/images/glacier-2013/glacier-2013-037.webp)
 
+![Lincoln Lake from the high trail](/images/glacier-2013/glacier-2013-121.webp)
+
+![Oscar resting above a lake and cliff waterfall](/images/glacier-2013/glacier-2013-052.webp)
+
+## Snyder Lake
+
 **Tuesday 8/13, 4:21am:** major lightning and rain. Then the comedy of errors — forgot stove fuel, had to go to town, and earned the long uphill twice. Pizza that afternoon was bad for me and good for Oscar.
 
-Snyder. Milky Way after the storm cleared. Night hike to the outhouse had us jumping at every bear-shaped shadow.
+Milky Way after the storm cleared. Night hike to the outhouse had us jumping at every bear-shaped shadow.
 
-## The big day — Sperry to Gunsight
+![Creek-side break — blue shirt, clear water, green banks](/images/glacier-2013/glacier-2013-077.webp)
+
+## Gunsight
 
 Tough day. Truly amazing. Worth every step.
 
-Long uphill through Sperry, then the chalet: ham, bacon, and cheese sandwich. Lincoln Lake from above. Walked through a waterfall and over snow on the mountain trail. At the base of Gunsight — fields of flowers and berries that were breathtaking. Made me miss my three girls.
+Long uphill through Sperry, then the chalet: ham, bacon, and cheese sandwich. Walked through a waterfall and over snow on the mountain trail. At the base of Gunsight — fields of flowers and berries that were breathtaking. Made me miss my three girls.
 
 Mountain goats all over the mountain.
-
-![Oscar resting above a lake and cliff waterfall](/images/glacier-2013/glacier-2013-052.webp)
 
 ![Oscar on trail with a waterfall behind him](/images/glacier-2013/glacier-2013-081.webp)
 
 ![Trail selfie with peaks and a thin waterfall](/images/glacier-2013/glacier-2013-096.webp)
-
-![Lincoln Lake from the high trail](/images/glacier-2013/glacier-2013-121.webp)
 
 ![Oscar and a mountain goat sharing the switchback](/images/glacier-2013/glacier-2013-117.webp)
 
@@ -64,9 +68,7 @@ Gunsight camp was overbooked. We let a couple stay at our site so a family could
 
 ![Oscar between two tarp setups at the shared Gunsight site](/images/glacier-2013/glacier-2013-066.webp)
 
-![Creek-side break — blue shirt, clear water, green banks](/images/glacier-2013/glacier-2013-077.webp)
-
-## Wednesday 8/14 — Toward Reynolds Creek
+## Reynolds Creek
 
 Fun day. Two day hikes on the way to Reynolds Creek. Thimbleberries and huckleberries all over the place.
 
@@ -83,6 +85,10 @@ Swam in Red Eagle. Cold, but worth it. Lying by the lake in the evening drying o
 ![Oscar barefoot on the shore after the swim](/images/glacier-2013/glacier-2013-237.webp)
 
 ![Evening quiet on the lake](/images/glacier-2013/glacier-2013-241.webp)
+
+## Out — West Glacier to home
+
+Back to West Glacier, then home — packs lighter, legs louder, already wanting the next one.
 
 ## Notes for next time
 
