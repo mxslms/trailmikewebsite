@@ -1,12 +1,12 @@
 ---
-title: "Homelab security: patches, Trivy, and dashboards that stay honest"
-description: "After the GPU dashboards: host patch status, container HIGH/CRITICAL scans with Trivy, and boot checks — on the server and the Jetson, without putting the lab on the public internet."
+title: "Container Security dashboard"
+description: "Trivy HIGH/CRITICAL scans across every running container on the homelab server and the Jetson — the last piece of the security phase before getting back to the edge AI pipeline."
 pubDate: 2026-08-09
 category: edge-ai
 location: Homelab · server to edge
 year: 2026
 featured: true
-coverImage: /images/security-dash/security-cover.webp
+coverImage: /images/security-dash/container-security.webp
 coverGradient: "linear-gradient(145deg, #111217 0%, #1e3d32 45%, #3d6b8a 100%)"
 tags:
   - security
@@ -14,61 +14,52 @@ tags:
   - grafana
   - jetson
   - observability
-  - patching
+  - containers
 ---
 
-The [monitoring post](/posts/monitoring-homelab-server-to-edge) covered GPUs, infra health, and the vision app. This one is the security layer on top of that stack: can I see patch debt, container risk, and “did this box come back clean after reboot?” for both the homelab server and the Jetson — without guessing, and without opening the lab to the public internet.
+Last piece of the homelab security work: a dashboard showing actual CVE exposure across every running container, on both the server and the Jetson.
 
-## What I wanted to see
+## Setup
 
-Three questions, answered the same way on both machines:
+Trivy already runs daily on both hosts via a systemd timer, scanning every currently-running image for HIGH and CRITICAL vulnerabilities. It writes results to node-exporter’s textfile collector — the same mechanism the [Patch Status](/posts/monitoring-homelab-server-to-edge) side of the stack uses for its metrics. Two metrics come out of it:
 
-1. Are **OS security updates** sitting unapplied?
-2. Are **running containers** carrying HIGH/CRITICAL findings?
-3. After a reboot, did the **important bits** actually come back?
+```
+trivy_vulnerabilities_total{image="...", severity="HIGH"|"CRITICAL"}
+trivy_last_scan_timestamp
+```
 
-Everything still lives on the Tailscale mesh. Grafana and Prometheus stay private. The public site only exits through the Cloudflare tunnel.
+The image list is re-derived from `docker ps` on every scan and the output file is fully overwritten each run, so a query only ever shows what’s currently running — nothing stale lingers. One caveat: since the scan is daily, the data can lag reality by up to 24 hours if something changed recently.
 
-## Patch status
+## The dashboard
 
-An hourly host script (not a container) asks apt what’s pending, whether unattended-upgrades is on, whether a reboot is required, and how fresh the last check was. On the Jetson it also records the current JetPack/L4T version so I’m not hunting through `dpkg` when something feels off.
+Four panels:
 
-Those numbers land in node-exporter’s textfile collector and show up on a **Patch Status** dashboard filtered by device.
+- **Total CRITICAL + HIGH** across every image, both hosts
+- **Per-image breakdown** — CRITICAL and HIGH count per image, color-coded
+- **Currently scanned images** — what’s actually running
+- **Scan freshness** — is the daily job still alive, same pattern as the Patch Status freshness panels
 
-![Security updates pending — server and Jetson](/images/security-dash/security-updates.webp)
+![Container Security dashboard — Trivy HIGH/CRITICAL across server and Jetson](/images/security-dash/container-security.webp)
 
-*Security-update counts for both hosts. The goal is zero sitting around, with alerts if that slips.*
+*Container Security: totals, scan freshness, what’s running, and per-image CRITICAL/HIGH.*
 
-## Container security (Trivy)
+![Patch Status dashboard — OS updates, reboot state, scan freshness](/images/security-dash/patch-status.webp)
 
-Same pattern for images: a daily Trivy job scans whatever is actually running in `docker ps` — not a static allow-list that drifts the first time I deploy something new. It only records **HIGH** and **CRITICAL** so the dashboard stays about things I’d act on.
+*Patch Status sits beside it: security updates, pending packages, reboot required, auto-patching, freshness.*
 
-Scan age matters as much as the counts. A green number from three weeks ago is just nostalgia. Freshness panels make that obvious.
+## What it found
 
-![Trivy scan freshness by device](/images/security-dash/trivy-freshness.webp)
+1009 combined CRITICAL/HIGH findings across the stack on first run. Most of it is normal — actively maintained images like Grafana, Loki, Promtail, cloudflared, and Portainer all came back at 0 CRITICAL. The standout was `uptime-kuma:1.23.17` at 12 CRITICAL, which points to a stale pinned version rather than an unfixable upstream issue. `cadvisor` and `dcgm-exporter` also showed CRITICAL findings, though both are images that tend to lag on rebuilding for base-OS CVEs regardless of tag.
 
-*When each host last finished a Trivy pass — stale scans are a signal too.*
+The realistic bar here isn’t zero. Some findings will always exist because upstream hasn’t shipped a fix yet. What matters is visibility — you can now see when an image is actually behind versus when it’s just carrying unfixable noise, and act on the difference instead of guessing.
 
-Base images and third-party containers will always light up something. The point of the panel isn’t a vanity zero; it’s knowing which running images moved, and whether CI already caught the app before it hit the Jetson.
+## Where this leaves the security work
 
-## Boot validation
+Combined with the Patch Status dashboard, the homelab now has:
 
-Weekly staggered reboots (Jetson first, server later) plus a post-boot check: containers up, Tailscale connected, firewall policy where it should be, GPU tools healthy on the server, monitoring targets back, public site reachable through the tunnel. Pass/fail becomes a metric. If a reboot “worked” but left something half-dead, the dashboard says so.
+- OS and dependency patching, auto-applied for security updates, tracked per host
+- Container image vulnerability scanning, per image, per severity
+- Alerting wired to all of it — already caught one real incident
+- Scheduled reboots with post-boot validation
 
-## Alerts that match the dashboards
-
-Grafana unified alerting is provisioned from Git with the rest of the stack. The security-shaped rules are the boring ones that matter: security updates pending too long, reboot required too long, targets down, disk full, Jetson running hot, boot validation failed. Website reachability stays with Uptime Kuma — one job per tool.
-
-## CI and the public site (related hardening)
-
-On the app and infra repos: Dependabot, pinned actions/images where it counts, Bandit on the Python, Trivy in CI for the vision image. On this website: security headers (CSP, frame denial, nosniff, referrer policy), cloudflared pinned, and EXIF/XMP stripped from trip photos so the journal doesn’t ship GPS breadcrumbs.
-
-None of that replaces the host dashboards. It just means fewer surprises before something lands on the edge node.
-
-## What’s next
-
-- Keep cutting HIGH/CRITICAL on images I actually own (the vision app and anything I pin)
-- Tighten how long a “reboot required” state can sit before it pages
-- Same security panels if another edge box joins the mesh
-
-Observability without patch and vuln views was half a picture. This is the other half — still private, still as-code, still aimed at the Jetson as much as the server.
+That closes out the security phase of this project. Next: back to the actual point — the edge AI pipeline.
