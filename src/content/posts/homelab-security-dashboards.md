@@ -21,7 +21,7 @@ Last piece of the homelab security work: a dashboard showing actual CVE exposure
 
 ## Setup
 
-Trivy already runs daily on both hosts via a systemd timer, scanning every currently-running image for HIGH and CRITICAL vulnerabilities. It writes results to node-exporter’s textfile collector — the same mechanism the [Patch Status](/posts/monitoring-homelab-server-to-edge) side of the stack uses for its metrics. Two metrics come out of it:
+Trivy already runs daily on both hosts via a systemd timer, scanning every currently-running image for HIGH and CRITICAL vulnerabilities. It writes results to node-exporter’s textfile collector — the same mechanism the Patch Status dashboard uses for its metrics. Two metrics come out of it:
 
 ```
 trivy_vulnerabilities_total{image="...", severity="HIGH"|"CRITICAL"}
@@ -49,9 +49,13 @@ Four panels:
 
 ## What it found
 
-1009 combined CRITICAL/HIGH findings across the stack on first run. Most of it is normal — actively maintained images like Grafana, Loki, Promtail, cloudflared, and Portainer all came back at 0 CRITICAL. The standout was `uptime-kuma:1.23.17` at 12 CRITICAL, which points to a stale pinned version rather than an unfixable upstream issue. `cadvisor` and `dcgm-exporter` also showed CRITICAL findings, though both are images that tend to lag on rebuilding for base-OS CVEs regardless of tag.
+The biggest number on the board is my own image. `ghcr.io/mxslms/edge-ai-vision:jetson` lands at **21 CRITICAL** and **357 HIGH**. That’s the standout — a JetPack/CUDA base with a lot of surface area, not a forgotten side container. Owning that number is the point of the dashboard; hiding it next to a screenshot that shows it would be silly.
 
-The realistic bar here isn’t zero. Some findings will always exist because upstream hasn’t shipped a fix yet. What matters is visibility — you can now see when an image is actually behind versus when it’s just carrying unfixable noise, and act on the difference instead of guessing.
+`gcr.io/cadvisor/cadvisor:v0.49.1` shows **5 CRITICAL** and **52 HIGH** on both the server and the Jetson. Fifty-two HIGH is a lot. I haven’t checked yet whether a newer tag clears any of that — so I’m not calling it unfixable upstream noise until I’ve looked.
+
+Other images in the same scrape look healthier. `cloudflare/cloudflared:latest` is at **0 CRITICAL / 2 HIGH**. Grafana’s table splits CRITICAL and HIGH onto separate rows (empty cell ≠ a second count), which is easy to misread until you notice the severity columns.
+
+The realistic bar still isn’t zero. Some findings will sit until upstream ships a fix. What matters is visibility — you can see when *your* image is the problem, when a pin is stale, and when you’re just carrying noise, instead of guessing.
 
 ## Where this leaves the security work
 
