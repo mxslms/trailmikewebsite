@@ -49,7 +49,7 @@ Four panels:
 
 ## What it found
 
-The biggest number on the board is my own image. `ghcr.io/mxslms/edge-ai-vision:jetson` lands at **21 CRITICAL** and **357 HIGH**. That’s the standout — a JetPack/CUDA base with a lot of surface area, not a forgotten side container. Owning that number is the point of the dashboard; hiding it next to a screenshot that shows it would be silly.
+The biggest number on the board is my own image. `ghcr.io/mxslms/edge-ai-vision:jetson` lands at **21 CRITICAL** and **357 HIGH**. That’s the standout — a JetPack/CUDA base with a lot of surface area, not a forgotten side container.
 
 `gcr.io/cadvisor/cadvisor:v0.49.1` shows **5 CRITICAL** and **52 HIGH** on both the server and the Jetson. Fifty-two HIGH is a lot. I haven’t checked yet whether a newer tag clears any of that — so I’m not calling it unfixable upstream noise until I’ve looked.
 
