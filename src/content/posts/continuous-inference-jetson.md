@@ -15,9 +15,7 @@ tags:
   - motion
 ---
 
-Security dashboards were useful. This is back to the actual point: the vision pipeline on the Jetson.
-
-Until tonight, inference only ran inside the `/video_feed` request handler. No browser connected → camera idle, model cold, nothing to learn from. Fine for a demo. Useless for a box that’s supposed to watch a scene unattended.
+Until tonight, inference only ran inside the `/video_feed` request handler. No browser connected → camera idle, model cold, nothing to learn from.
 
 ## Background loop
 
