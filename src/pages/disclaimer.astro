@@ -1,0 +1,81 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+---
+
+<PageLayout
+  title="Disclaimer"
+  description="Trailmike is a personal journal. Trip notes and tech build notes are shared as-is — use your own judgment."
+>
+  <section class="section">
+    <div class="wrap disclaimer">
+      <p class="eyebrow fade-up">Legal</p>
+      <h1 class="fade-up-delay">Disclaimer</h1>
+      <div class="prose fade-up-delay-2">
+        <p>
+          trailmike.com is a personal journal: backpacking trip notes and edge AI / homelab build
+          notes. Content is for general informational and educational purposes. By using this site,
+          you agree you’re responsible for your own safety, hardware, data, and decisions.
+        </p>
+
+        <h2>Accuracy</h2>
+        <p>
+          Everything here reflects personal experience at the time it was written. Conditions,
+          software versions, trail status, and best practices change. No guarantee is made that
+          any page is complete, current, or error-free.
+        </p>
+
+        <h2>Outdoors</h2>
+        <p>
+          Backpacking and wilderness travel involve real risk — weather, injury, wildlife, navigation
+          errors, and changing trail conditions among them. Route notes and trip write-ups describe
+          past personal trips, not instructions that guarantee a safe outcome. You are responsible
+          for your fitness, skills, gear, permits, and for checking current conditions, closures, and
+          forecasts before you go.
+        </p>
+
+        <h2>Tech and edge AI</h2>
+        <p>
+          Homelab and edge AI notes — Jetson bring-up, containers, configs, commands, pipelines —
+          are shared as-is for hobbyist and learning use. Running similar setups can mean hardware
+          damage, outages, or data loss. Back up what matters, secure your own network, and verify
+          anything before you run it on your machines. Nothing here is professional consulting or
+          certified IT advice.
+        </p>
+
+        <h2>External links</h2>
+        <p>
+          Links to other sites are provided for convenience. Their content and practices are outside
+          this site’s control.
+        </p>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .disclaimer {
+    max-width: 40rem;
+  }
+
+  h1 {
+    margin: 0.35rem 0 1.25rem;
+    font-size: clamp(2.4rem, 6vw, 3.8rem);
+  }
+
+  .prose {
+    color: var(--ink-soft);
+  }
+
+  .prose p,
+  .prose li {
+    font-size: 1.1rem;
+  }
+
+  .prose h2 {
+    margin: 1.75rem 0 0.65rem;
+    font-size: 1.15rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--stone);
+  }
+</style>
