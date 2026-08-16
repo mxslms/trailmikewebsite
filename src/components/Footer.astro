@@ -7,12 +7,16 @@ const year = new Date().getFullYear();
     <div>
       <p class="footer-brand">Trailmike</p>
       <p class="footer-note">Trip journals and edge AI build notes.</p>
+      <p class="footer-note footer-affiliate">
+        Some links may be affiliates — see <a href="/disclaimer">Disclaimer</a>.
+      </p>
     </div>
     <nav aria-label="Footer">
       <a href="/adventures">Adventures</a>
       <a href="/edge-ai">Edge AI</a>
       <a href="/posts">Journal</a>
       <a href="/about">About</a>
+      <a href="/disclaimer">Disclaimer</a>
     </nav>
     <p class="footer-copy">© {year} Trailmike</p>
   </div>
@@ -44,6 +48,17 @@ const year = new Date().getFullYear();
     margin: 0.25rem 0 0;
     color: var(--ink-soft);
     font-size: 0.95rem;
+  }
+
+  .footer-affiliate {
+    font-size: 0.85rem;
+    color: var(--stone);
+  }
+
+  .footer-affiliate a {
+    color: var(--spruce);
+    font-weight: 600;
+    text-decoration: none;
   }
 
   nav {
